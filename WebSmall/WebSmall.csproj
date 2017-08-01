@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32930F70-CD03-4EB2-98AB-60C13F8189CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSmall</RootNamespace>
+    <AssemblyName>WebSmall</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bename\app.js" />
+    <Content Include="bename\pages\app\image\banner.jpg" />
+    <Content Include="bename\pages\app\index.js" />
+    <Content Include="bename\pages\result\result.js" />
+    <Content Include="Fanyi\.gitignore" />
+    <Content Include="Fanyi\app.js" />
+    <Content Include="Fanyi\images\fanyi.png" />
+    <Content Include="Fanyi\images\fanyi_selected.png" />
+    <Content Include="Fanyi\images\lishi.png" />
+    <Content Include="Fanyi\images\lishi_selected.png" />
+    <Content Include="Fanyi\utils\api.js" />
+    <Content Include="Fanyi\utils\md5.js" />
+    <Content Include="Fanyi\views\index\index.js" />
+    <Content Include="Fanyi\views\lishi\lishi.js" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include=".DS_Store" />
+    <Content Include="app.json" />
+    <Content Include="app.wxss" />
+    <Content Include="image\.DS_Store" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\WebSmall.csprojResolveAssemblyReference.cache" />
+    <Content Include="page\API\animation\animation.json" />
+    <Content Include="page\API\animation\animation.wxml" />
+    <Content Include="page\API\animation\animation.wxss" />
+    <Content Include="page\API\background-audio\background-audio.json" />
+    <Content Include="page\API\background-audio\background-audio.wxml" />
+    <Content Include="page\API\background-audio\background-audio.wxss" />
+    <Content Include="page\API\canvas\canvas.json" />
+    <Content Include="page\API\canvas\canvas.wxml" />
+    <Content Include="page\API\canvas\canvas.wxss" />
+    <Content Include="page\API\canvas\example.wxml" />
+    <Content Include="page\API\common\footer.wxml" />
+    <Content Include="page\API\common\header.wxml" />
+    <Content Include="page\API\download-file\download-file.json" />
+    <Content Include="page\API\download-file\download-file.wxml" />
+    <Content Include="page\API\download-file\download-file.wxss" />
+    <Content Include="page\API\file\file.json" />
+    <Content Include="page\API\file\file.wxml" />
+    <Content Include="page\API\file\file.wxss" />
+    <Content Include="page\API\get-location\get-location.json" />
+    <Content Include="page\API\get-location\get-location.wxml" />
+    <Content Include="page\API\get-location\get-location.wxss" />
+    <Content Include="page\API\get-network-type\get-network-type.json" />
+    <Content Include="page\API\get-network-type\get-network-type.wxml" />
+    <Content Include="page\API\get-network-type\get-network-type.wxss" />
+    <Content Include="page\API\get-system-info\get-system-info.json" />
+    <Content Include="page\API\get-system-info\get-system-info.wxml" />
+    <Content Include="page\API\get-system-info\get-system-info.wxss" />
+    <Content Include="page\API\get-user-info\get-user-info.json" />
+    <Content Include="page\API\get-user-info\get-user-info.wxml" />
+    <Content Include="page\API\get-user-info\get-user-info.wxss" />
+    <Content Include="page\API\image\image.json" />
+    <Content Include="page\API\image\image.wxml" />
+    <Content Include="page\API\image\image.wxss" />
+    <Content Include="page\API\index\index.wxml" />
+    <Content Include="page\API\index\index.wxss" />
+    <Content Include="page\API\login\login.json" />
+    <Content Include="page\API\login\login.wxml" />
+    <Content Include="page\API\login\login.wxss" />
+    <Content Include="page\API\navigation-bar-loading\navigation-bar-loading.json" />
+    <Content Include="page\API\navigation-bar-loading\navigation-bar-loading.wxml" />
+    <Content Include="page\API\navigation-bar-loading\navigation-bar-loading.wxss" />
+    <Content Include="page\API\navigator\navigator.json" />
+    <Content Include="page\API\navigator\navigator.wxml" />
+    <Content Include="page\API\navigator\navigator.wxss" />
+    <Content Include="page\API\on-accelerometer-change\on-accelerometer-change.json" />
+    <Content Include="page\API\on-accelerometer-change\on-accelerometer-change.wxml" />
+    <Content Include="page\API\on-accelerometer-change\on-accelerometer-change.wxss" />
+    <Content Include="page\API\on-compass-change\on-compass-change.json" />
+    <Content Include="page\API\on-compass-change\on-compass-change.wxml" />
+    <Content Include="page\API\on-compass-change\on-compass-change.wxss" />
+    <Content Include="page\API\open-location\open-location.json" />
+    <Content Include="page\API\open-location\open-location.wxml" />
+    <Content Include="page\API\open-location\open-location.wxss" />
+    <Content Include="page\API\pull-down-refresh\pull-down-refresh.json" />
+    <Content Include="page\API\pull-down-refresh\pull-down-refresh.wxml" />
+    <Content Include="page\API\pull-down-refresh\pull-down-refresh.wxss" />
+    <Content Include="page\API\request-payment\request-payment.json" />
+    <Content Include="page\API\request-payment\request-payment.wxml" />
+    <Content Include="page\API\request-payment\request-payment.wxss" />
+    <Content Include="page\API\request\request.json" />
+    <Content Include="page\API\request\request.wxml" />
+    <Content Include="page\API\request\request.wxss" />
+    <Content Include="page\API\set-navigation-bar-title\set-navigation-bar-title.json" />
+    <Content Include="page\API\set-navigation-bar-title\set-navigation-bar-title.wxml" />
+    <Content Include="page\API\set-navigation-bar-title\set-navigation-bar-title.wxss" />
+    <Content Include="page\API\storage\storage.json" />
+    <Content Include="page\API\storage\storage.wxml" />
+    <Content Include="page\API\storage\storage.wxss" />
+    <Content Include="page\API\upload-file\upload-file.json" />
+    <Content Include="page\API\upload-file\upload-file.wxml" />
+    <Content Include="page\API\upload-file\upload-file.wxss" />
+    <Content Include="page\API\video\video.json" />
+    <Content Include="page\API\video\video.wxml" />
+    <Content Include="page\API\video\video.wxss" />
+    <Content Include="page\API\voice\voice.json" />
+    <Content Include="page\API\voice\voice.wxml" />
+    <Content Include="page\API\voice\voice.wxss" />
+    <Content Include="page\API\web-socket\web-socket.json" />
+    <Content Include="page\API\web-socket\web-socket.wxml" />
+    <Content Include="page\API\web-socket\web-socket.wxss" />
+    <Content Include="page\component\component-pages\action-sheet\action-sheet.wxml" />
+    <Content Include="page\component\component-pages\action-sheet\action-sheet.wxss" />
+    <Content Include="page\component\component-pages\audio\audio.wxml" />
+    <Content Include="page\component\component-pages\button\button.wxml" />
+    <Content Include="page\component\component-pages\button\button.wxss" />
+    <Content Include="page\component\component-pages\canvas\canvas.json" />
+    <Content Include="page\component\component-pages\canvas\canvas.wxml" />
+    <Content Include="page\component\component-pages\canvas\canvas.wxss" />
+    <Content Include="page\component\component-pages\checkbox\checkbox.wxml" />
+    <Content Include="page\component\component-pages\checkbox\checkbox.wxss" />
+    <Content Include="page\component\component-pages\form\form.wxml" />
+    <Content Include="page\component\component-pages\form\form.wxss" />
+    <Content Include="page\component\component-pages\icon\icon.wxml" />
+    <Content Include="page\component\component-pages\icon\icon.wxss" />
+    <Content Include="page\component\component-pages\image\image.wxml" />
+    <Content Include="page\component\component-pages\image\image.wxss" />
+    <Content Include="page\component\component-pages\input\input.wxml" />
+    <Content Include="page\component\component-pages\input\input.wxss" />
+    <Content Include="page\component\component-pages\label\label.wxml" />
+    <Content Include="page\component\component-pages\label\label.wxss" />
+    <Content Include="page\component\component-pages\loading\loading.wxml" />
+    <Content Include="page\component\component-pages\map\map.json" />
+    <Content Include="page\component\component-pages\map\map.wxml" />
+    <Content Include="page\component\component-pages\modal\modal.wxml" />
+    <Content Include="page\component\component-pages\navigator\navigate.wxml" />
+    <Content Include="page\component\component-pages\navigator\navigator.wxml" />
+    <Content Include="page\component\component-pages\navigator\navigator.wxss" />
+    <Content Include="page\component\component-pages\navigator\redirect.wxml" />
+    <Content Include="page\component\component-pages\picker\picker.wxml" />
+    <Content Include="page\component\component-pages\picker\picker.wxss" />
+    <Content Include="page\component\component-pages\progress\progress.wxml" />
+    <Content Include="page\component\component-pages\progress\progress.wxss" />
+    <Content Include="page\component\component-pages\radio\radio.wxml" />
+    <Content Include="page\component\component-pages\radio\radio.wxss" />
+    <Content Include="page\component\component-pages\scroll-view\scroll-view.wxml" />
+    <Content Include="page\component\component-pages\scroll-view\scroll-view.wxss" />
+    <Content Include="page\component\component-pages\slide-tab\slide-tab.wxml" />
+    <Content Include="page\component\component-pages\slide-tab\slide-tab.wxss" />
+    <Content Include="page\component\component-pages\slider\slider.wxml" />
+    <Content Include="page\component\component-pages\swiper\swiper.wxml" />
+    <Content Include="page\component\component-pages\swiper\swiper.wxss" />
+    <Content Include="page\component\component-pages\switch\switch.wxml" />
+    <Content Include="page\component\component-pages\text\text.wxml" />
+    <Content Include="page\component\component-pages\toast\toast.wxml" />
+    <Content Include="page\component\component-pages\video\video.wxml" />
+    <Content Include="page\component\component-pages\view\view.wxml" />
+    <Content Include="page\component\component-pages\view\view.wxss" />
+    <Content Include="page\component\index.wxml" />
+    <Content Include="page\component\index.wxss" />
+    <Content Include="page\component\resources\.DS_Store" />
+    <Content Include="page\component\resources\pic\.DS_Store" />
+    <Content Include=".wing\launch.json" />
+    <Content Include=".wing\settings.json" />
+    <Content Include=".wing\tasks.json" />
+    <Content Include="jsconfig.json" />
+    <Content Include="README.md" />
+    <Content Include="bename\app.json" />
+    <Content Include="bename\app.wxss" />
+    <Content Include="bename\pages\app\index.wxml" />
+    <Content Include="bename\pages\app\index.wxss" />
+    <Content Include="bename\pages\result\result.wxml" />
+    <Content Include="bename\pages\result\result.wxss" />
+    <Content Include="Fanyi\app.json" />
+    <Content Include="Fanyi\app.wxss" />
+    <Content Include="Fanyi\LICENSE" />
+    <Content Include="Fanyi\README.md" />
+    <Content Include="Fanyi\views\index\index.wxml" />
+    <Content Include="Fanyi\views\index\index.wxss" />
+    <Content Include="Fanyi\views\lishi\lishi.json" />
+    <Content Include="Fanyi\views\lishi\lishi.wxml" />
+    <Content Include="Fanyi\views\lishi\lishi.wxss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="image\arrowright.png" />
+    <Content Include="image\green_tri.png" />
+    <Content Include="image\icon64_appwx_logo.png" />
+    <Content Include="image\icon_API.png" />
+    <Content Include="image\icon_API_HL.png" />
+    <Content Include="image\icon_component.png" />
+    <Content Include="image\icon_component_HL.png" />
+    <Content Include="image\mealBoxAdd.png" />
+    <Content Include="image\mealBoxMinus.png" />
+    <Content Include="image\mealNormal.png" />
+    <Content Include="image\mealSelect.png" />
+    <Content Include="image\myNormal.png" />
+    <Content Include="image\mySelect.png" />
+    <Content Include="image\orderListNormal.png" />
+    <Content Include="image\orderListSelect.png" />
+    <Content Include="image\pause.png" />
+    <Content Include="image\play.png" />
+    <Content Include="image\plus.png" />
+    <Content Include="image\record.png" />
+    <Content Include="image\stop.png" />
+    <Content Include="image\trash.png" />
+    <Content Include="image\wechat.png" />
+    <Content Include="image\wechatHL.png" />
+    <Content Include="Index.html" />
+    <Content Include="obj\Debug\WebSmall.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\WebSmall.dll" />
+    <Content Include="obj\Debug\WebSmall.pdb" />
+    <Content Include="page\API\animation\animation.js" />
+    <Content Include="page\API\background-audio\background-audio.js" />
+    <Content Include="page\API\canvas\canvas.js" />
+    <Content Include="page\API\canvas\example.js" />
+    <Content Include="page\API\download-file\download-file.js" />
+    <Content Include="page\API\file\file.js" />
+    <Content Include="page\API\get-location\format-location.js" />
+    <Content Include="page\API\get-location\get-location.js" />
+    <Content Include="page\API\get-network-type\get-network-type.js" />
+    <Content Include="page\API\get-system-info\get-system-info.js" />
+    <Content Include="page\API\get-user-info\get-user-info.js" />
+    <Content Include="page\API\image\image.js" />
+    <Content Include="page\API\index\index.js" />
+    <Content Include="page\API\login\login.js" />
+    <Content Include="page\API\navigation-bar-loading\navigation-bar-loading.js" />
+    <Content Include="page\API\navigator\navigator.js" />
+    <Content Include="page\API\on-accelerometer-change\on-accelerometer-change.js" />
+    <Content Include="page\API\on-compass-change\on-compass-change.js" />
+    <Content Include="page\API\open-location\open-location.js" />
+    <Content Include="page\API\pull-down-refresh\pull-down-refresh.js" />
+    <Content Include="page\API\request-payment\request-payment.js" />
+    <Content Include="page\API\request\request.js" />
+    <Content Include="page\API\set-navigation-bar-title\set-navigation-bar-title.js" />
+    <Content Include="page\API\storage\storage.js" />
+    <Content Include="page\API\upload-file\upload-file.js" />
+    <Content Include="page\API\video\video.js" />
+    <Content Include="page\API\voice\voice.js" />
+    <Content Include="page\API\web-socket\web-socket.js" />
+    <Content Include="page\component\component-pages\action-sheet\action-sheet.js" />
+    <Content Include="page\component\component-pages\audio\audio.js" />
+    <Content Include="page\component\component-pages\button\button.js" />
+    <Content Include="page\component\component-pages\canvas\canvas.js" />
+    <Content Include="page\component\component-pages\checkbox\checkbox.js" />
+    <Content Include="page\component\component-pages\form\form.js" />
+    <Content Include="page\component\component-pages\icon\icon.js" />
+    <Content Include="page\component\component-pages\image\image.js" />
+    <Content Include="page\component\component-pages\input\input.js" />
+    <Content Include="page\component\component-pages\label\label.js" />
+    <Content Include="page\component\component-pages\loading\loading.js" />
+    <Content Include="page\component\component-pages\map\map.js" />
+    <Content Include="page\component\component-pages\modal\modal.js" />
+    <Content Include="page\component\component-pages\navigator\navigate.js" />
+    <Content Include="page\component\component-pages\navigator\navigator.js" />
+    <Content Include="page\component\component-pages\navigator\redirect.js" />
+    <Content Include="page\component\component-pages\picker\picker.js" />
+    <Content Include="page\component\component-pages\progress\progress.js" />
+    <Content Include="page\component\component-pages\radio\radio.js" />
+    <Content Include="page\component\component-pages\scroll-view\scroll-view.js" />
+    <Content Include="page\component\component-pages\slide-tab\slide-tab.js" />
+    <Content Include="page\component\component-pages\slider\slider.js" />
+    <Content Include="page\component\component-pages\swiper\swiper.js" />
+    <Content Include="page\component\component-pages\switch\switch.js" />
+    <Content Include="page\component\component-pages\text\text.js" />
+    <Content Include="page\component\component-pages\toast\toast.js" />
+    <Content Include="page\component\component-pages\video\video.js" />
+    <Content Include="page\component\component-pages\view\view.js" />
+    <Content Include="page\component\index.js" />
+    <Content Include="page\component\resources\json\menus.js" />
+    <Content Include="page\component\resources\kind\canvas.png" />
+    <Content Include="page\component\resources\kind\content.png" />
+    <Content Include="page\component\resources\kind\form.png" />
+    <Content Include="page\component\resources\kind\interact.png" />
+    <Content Include="page\component\resources\kind\map.png" />
+    <Content Include="page\component\resources\kind\media.png" />
+    <Content Include="page\component\resources\kind\nav.png" />
+    <Content Include="page\component\resources\kind\view.png" />
+    <Content Include="page\component\resources\pic\1.jpg" />
+    <Content Include="page\component\resources\pic\2.jpg" />
+    <Content Include="page\component\resources\pic\countMinus.png" />
+    <Content Include="page\component\resources\pic\countSelAdd.png" />
+    <Content Include="page\component\resources\pic\ding-ico1.png" />
+    <Content Include="page\component\resources\pic\dish-1.jpg" />
+    <Content Include="page\component\resources\pic\dish-10.jpg" />
+    <Content Include="page\component\resources\pic\dish-2.jpg" />
+    <Content Include="page\component\resources\pic\dish-3.jpg" />
+    <Content Include="page\component\resources\pic\dish-4.jpg" />
+    <Content Include="page\component\resources\pic\dish-5.jpg" />
+    <Content Include="page\component\resources\pic\dish-6.jpg" />
+    <Content Include="page\component\resources\pic\dish-7.jpg" />
+    <Content Include="page\component\resources\pic\dish-8.jpg" />
+    <Content Include="page\component\resources\pic\dish-9.jpg" />
+    <Content Include="page\component\resources\pic\mealBoxAdd.png" />
+    <Content Include="page\component\resources\pic\orderBox.png" />
+    <Content Include="page\component\resources\pic\subtractionButtonAction.png" />
+    <Content Include="util\util.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="typings\weapp.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>36650</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:36650/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
