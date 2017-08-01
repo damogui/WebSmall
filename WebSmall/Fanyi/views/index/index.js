@@ -68,7 +68,7 @@ Page({
             'Content-Type': 'jsonp'
         },
         success (res) {
-            debugger;
+            
           that.setData({
             result_text:res.data.trans_result[0].dst,
             result:that.data.textarea_text,
@@ -88,7 +88,7 @@ Page({
                 data: lishiAll
             });
             //wx.clearStorageSync();
-            debugger;
+            
             wx.getStorage({
                 key: "lishi",
                 success (res) {
