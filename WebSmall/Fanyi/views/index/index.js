@@ -97,7 +97,7 @@ Page({
                             result_text: res.data[0].src,
                             result: res.data[0].dst,
                             fanyi_lishi: res.data
-                        })
+                        });
                     }
                 }
             });
