@@ -12,7 +12,7 @@ Page({
     // 页面显示
     var that = this
     wx.getStorage({
-  	key:"lishi",
+        key: "lishiAll",
   	success (res){
   	  that.setData({
   	  	fanyi_lishi:res.data

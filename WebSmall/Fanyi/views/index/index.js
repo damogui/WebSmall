@@ -22,8 +22,10 @@ Page({
   },
   btn_click_null (){
     this.setData({
-      textarea_text:"",
-      result_text:"nothing..."
+        textarea_text: "",
+        fanyi_lishi: [],
+        result_text: "nothing...",
+        fanyi_src: "../../images/fanyi.png"
     })
   },
   textarea_bindinput(res){
@@ -66,30 +68,41 @@ Page({
             'Content-Type': 'jsonp'
         },
         success (res) {
+            debugger;
           that.setData({
             result_text:res.data.trans_result[0].dst,
             result:that.data.textarea_text,
             textarea_text:""
           })
-          var lishi = wx.getStorageSync('lishi') || []
-          lishi.unshift(res.data.trans_result[0])
+          var lishi = [];//wx.getStorageSync('lishi') ||
+          var lishiAll = wx.getStorageSync('lishi') || [];
+          lishi.unshift(res.data.trans_result[0]);
+          lishiAll.unshift(res.data.trans_result[0]);
             wx.setStorage({
                 key: "lishi",
                 data: lishi
             });
+
+            wx.setStorage({
+                key: "lishiAll",
+                data: lishiAll
+            });
             //wx.clearStorageSync();
-          wx.getStorage({
-            key:"lishi",
-            success (res){
-              if (res.data != null) {
-                that.setData({
-                  result_text:res.data[0].src,
-                  result:res.data[0].dst,
-                  fanyi_lishi:res.data
-               })
-              }
-            }
-          })
+            debugger;
+            wx.getStorage({
+                key: "lishi",
+                success (res) {
+                    if (res.data != null) {
+                        that.setData({
+                            result_text: res.data[0].src,
+                            result: res.data[0].dst,
+                            fanyi_lishi: res.data
+                        })
+                    }
+                }
+            });
+        
+
         },
         fail (res){
           wx.showModal({
