@@ -15,7 +15,7 @@ Page({
             console.log(res.target)
         }
         return {
-            title: '翻译',
+            title: '中英互译',
             path: 'views/index/index',
             success: function(res) {
                 // 转发成功

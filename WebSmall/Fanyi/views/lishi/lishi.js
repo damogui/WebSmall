@@ -1,6 +1,22 @@
 Page({
+    onShareAppMessage: function (res) {
+        if (res.from === 'button') {
+            // 来自页面内转发按钮
+            console.log(res.target)
+        }
+        return {
+            title: '中英互译',
+            path: 'views/index/index',
+            success: function (res) {
+                // 转发成功
+            },
+            fail: function (res) {
+                // 转发失败
+            }
+        }
+    },
   data:{
-    text:"这是一个页面",
+    text:"历史页面",
     fanyi_lishi:[]
   },
   onLoad (options){
