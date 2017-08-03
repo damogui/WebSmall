@@ -9,6 +9,22 @@ var md5 = require('../../utils/md5.js')
  */
 var api = require('../../utils/api.js')
 Page({
+    onShareAppMessage: function (res) {
+        if (res.from === 'button') {
+            // 来自页面内转发按钮
+            console.log(res.target)
+        }
+        return {
+            title: '翻译',
+            path: 'views/index/index',
+            success: function(res) {
+                // 转发成功
+            },
+            fail: function(res) {
+                // 转发失败
+            }
+        }
+    },
   data:{
     text:"这是一个页面",
     textarea_placeholder:"请输入要翻译的内容",
