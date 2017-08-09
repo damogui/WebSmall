@@ -7,7 +7,25 @@ var md5 = require('../../utils/md5.js')
  * 引入API接口地址文件
  * @type {[type]}
  */
-var api = require('../../utils/api.js')
+var api = require('../../utils/api.js');
+//调用微信登录接口  
+//wx.login({
+//    success: function(loginCode) {
+//        var appid = ''; //填写微信小程序appid  
+//        var secret = ''; //填写微信小程序secret  
+
+//        //调用request请求api转换登录凭证  
+//        wx.request({
+//            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=‘+<code></code>appid+’&secret=‘+secret+’&grant_type=authorization_code&js_code=' + loginCode.code,
+//            header: {
+//                'content-type': 'application/json'
+//            },
+//            success: function(res) {
+//                console.log(res.data.openid) //获取openid  
+//            }
+//        })
+//    }
+//});
 Page({
     onShareAppMessage: function (res) {
         if (res.from === 'button') {
