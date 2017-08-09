@@ -108,6 +108,7 @@
     <Content Include="Fanyi\images\lishi_selected.png" />
     <Content Include="Fanyi\utils\api.js" />
     <Content Include="Fanyi\utils\md5.js" />
+    <Content Include="Fanyi\utils\request.js" />
     <Content Include="Fanyi\views\index\index.js" />
     <Content Include="Fanyi\views\lishi\lishi.js" />
     <Content Include="packages.config" />

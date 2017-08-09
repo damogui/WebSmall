@@ -1,3 +1,4 @@
+
 /**
  * 引入MD5生成文件
  * @type {[type]}
@@ -10,22 +11,47 @@ var md5 = require('../../utils/md5.js')
 var api = require('../../utils/api.js');
 //调用微信登录接口  
 //wx.login({
+   
 //    success: function(loginCode) {
 //        var appid = ''; //填写微信小程序appid  
 //        var secret = ''; //填写微信小程序secret  
-
+//        debugger;
 //        //调用request请求api转换登录凭证  
 //        wx.request({
-//            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=‘+<code></code>appid+’&secret=‘+secret+’&grant_type=authorization_code&js_code=' + loginCode.code,
+//            url: 'https://www.our666.com/Home/InsertUser',
 //            header: {
 //                'content-type': 'application/json'
 //            },
 //            success: function(res) {
+//                debugger;
 //                console.log(res.data.openid) //获取openid  
 //            }
 //        })
 //    }
 //});
+
+var request = require("../../utils/request.js");
+
+wx.login({
+    success: function(res_login) {
+        if (res_login.code) {
+            wx.getUserInfo({
+                withCredentials: true,
+                success: function(res_user) {
+                    var requestUrl = "https://www.our666.com/Home/InsertUser";
+                    var jsonData = {
+                        code: res_login.code,
+                        encryptedData: res_user.encryptedData,
+                        iv: res_user.iv
+                    };
+                    request.httpsPostRequest(requestUrl, jsonData, function(res) {
+                        console.log(res.openId);
+                    });
+                }
+            })
+        }
+    }
+});
 Page({
     onShareAppMessage: function (res) {
         if (res.from === 'button') {
