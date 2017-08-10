@@ -22,35 +22,10 @@ var api = require('../../utils/api.js');
 //});
 
 var API_URL = "https://www.our666.com/Home/InsertUser";
-//Page({
-//    onLoad: function () {
-//        console.log("iv");
-//        wx.login({//login流程
-//            success: function (res) {//登录成功
-//                if (res.code) {
-//                    var code = res.code;
-//                    wx.getUserInfo({
-////getUserInfo流程
-//                        success: function(res2) { //获取userinfo成功
-//                            console.log(res2);
-//                            var encryptedData = encodeURIComponent(res2.encryptedData); //一定要把加密串转成URI编码
-//                            var iv = res2.iv;
-//                            //请求自己的服务器
-//                            Login(code, encryptedData, iv);
-//                        }
-//                    });
-
-//                } else {
-//                    console.log('获取用户登录态失败！' + res.errMsg);
-//                }
-//            }
-//        });
-//    }
-//})
 
 function Login(code, encryptedData, iv) {
-    debugger;
-    console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
+   
+    //console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
     //创建一个dialog
     wx.showToast({
         title: '正在登录...',
@@ -72,7 +47,7 @@ function Login(code, encryptedData, iv) {
         success: function (res) {
             // success
             wx.hideToast();
-            console.log('服务器返回' + res.data);
+           // console.log('服务器返回' + res.data);
 
         },
         fail: function () {
@@ -85,28 +60,10 @@ function Login(code, encryptedData, iv) {
     })
 }
 
-//wx.request({
-//    url: 'https://www.our666.com/Home/InsertUser',
-//    data: { cur: 1 },
-//    method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-//    // header: {}, // 设置请求的 header
-//    success: function (json) {
-//        wx.showModal({
-//            title: '提示',
-//            content: JSON.stringify(json.data),
-//            success: function (res) {
-//                if (res.confirm) {
-//                    console.log('用户点击确定');
-//                }
-//            }
-//        })
-//    }
-//})
-
 
 
 Page({ onLoad: function () {
-    console.log("iv");
+    //console.log("iv");
     wx.login({//login流程
         success: function (res) {//登录成功
             if (res.code) {
@@ -114,12 +71,12 @@ Page({ onLoad: function () {
                 wx.getUserInfo({
                     //getUserInfo流程
                     success: function(res2) { //获取userinfo成功
-                        console.log(res2);
+                        //console.log(res2);
                         var encryptedData = encodeURIComponent(res2.encryptedData); //一定要把加密串转成URI编码
                         var iv = res2.iv;
                         //请求自己的服务器
-                        debugger;
-                        console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
+                       
+                       // console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
                         Login(code, encryptedData, iv);
                     }
                 });
