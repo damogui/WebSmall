@@ -3,57 +3,133 @@
  * 引入MD5生成文件
  * @type {[type]}
  */
-var md5 = require('../../utils/md5.js')
+var md5 = require('../../utils/md5.js');
 /**
  * 引入API接口地址文件
  * @type {[type]}
  */
 var api = require('../../utils/api.js');
 //调用微信登录接口  
+
+//var request = require("../../utils/request.js");
+
+
 //wx.login({
-   
-//    success: function(loginCode) {
-//        var appid = ''; //填写微信小程序appid  
-//        var secret = ''; //填写微信小程序secret  
-//        debugger;
-//        //调用request请求api转换登录凭证  
-//        wx.request({
-//            url: 'https://www.our666.com/Home/InsertUser',
-//            header: {
-//                'content-type': 'application/json'
-//            },
-//            success: function(res) {
-//                debugger;
-//                console.log(res.data.openid) //获取openid  
-//            }
-//        })
+//    success: function (res) {
+//        console.log(res.code);
+       
 //    }
 //});
 
-var request = require("../../utils/request.js");
+var API_URL = "https://www.our666.com/Home/InsertUser";
+//Page({
+//    onLoad: function () {
+//        console.log("iv");
+//        wx.login({//login流程
+//            success: function (res) {//登录成功
+//                if (res.code) {
+//                    var code = res.code;
+//                    wx.getUserInfo({
+////getUserInfo流程
+//                        success: function(res2) { //获取userinfo成功
+//                            console.log(res2);
+//                            var encryptedData = encodeURIComponent(res2.encryptedData); //一定要把加密串转成URI编码
+//                            var iv = res2.iv;
+//                            //请求自己的服务器
+//                            Login(code, encryptedData, iv);
+//                        }
+//                    });
 
-wx.login({
-    success: function(res_login) {
-        if (res_login.code) {
-            wx.getUserInfo({
-                withCredentials: true,
-                success: function(res_user) {
-                    var requestUrl = "/Home/InsertUser";
-                    var jsonData = {
-                        code: res_login.code,
-                        encryptedData: res_user.encryptedData,
-                        iv: res_user.iv
-                    };
-                    debugger;
-                    request.httpsPostRequest(requestUrl, jsonData, function(res) {
-                        console.log(res.openId);
-                    });
-                }
-            })
+//                } else {
+//                    console.log('获取用户登录态失败！' + res.errMsg);
+//                }
+//            }
+//        });
+//    }
+//})
+
+function Login(code, encryptedData, iv) {
+    debugger;
+    console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
+    //创建一个dialog
+    wx.showToast({
+        title: '正在登录...',
+        icon: 'loading',
+        duration: 10000
+    });
+    //请求服务器
+    wx.request({
+        url: API_URL,
+        data: {
+            code: code,
+            encryptedData: encryptedData,
+            iv: iv
+        },
+        method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        header: {
+            'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function (res) {
+            // success
+            wx.hideToast();
+            console.log('服务器返回' + res.data);
+
+        },
+        fail: function () {
+            // fail
+            // wx.hideToast();
+        },
+        complete: function () {
+            // complete
         }
-    }
-});
-Page({
+    })
+}
+
+//wx.request({
+//    url: 'https://www.our666.com/Home/InsertUser',
+//    data: { cur: 1 },
+//    method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+//    // header: {}, // 设置请求的 header
+//    success: function (json) {
+//        wx.showModal({
+//            title: '提示',
+//            content: JSON.stringify(json.data),
+//            success: function (res) {
+//                if (res.confirm) {
+//                    console.log('用户点击确定');
+//                }
+//            }
+//        })
+//    }
+//})
+
+
+
+Page({ onLoad: function () {
+    console.log("iv");
+    wx.login({//login流程
+        success: function (res) {//登录成功
+            if (res.code) {
+                var code = res.code;
+                wx.getUserInfo({
+                    //getUserInfo流程
+                    success: function(res2) { //获取userinfo成功
+                        console.log(res2);
+                        var encryptedData = encodeURIComponent(res2.encryptedData); //一定要把加密串转成URI编码
+                        var iv = res2.iv;
+                        //请求自己的服务器
+                        debugger;
+                        console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
+                        Login(code, encryptedData, iv);
+                    }
+                });
+
+            } else {
+                console.log('获取用户登录态失败！' + res.errMsg);
+            }
+        }
+    });
+},
     onShareAppMessage: function (res) {
         if (res.from === 'button') {
             // 来自页面内转发按钮
@@ -194,9 +270,9 @@ Page({
       fanyi_src:'../../images/fanyi.png'
     })
   },
-  onLoad (options){
-    // 页面初始化 options为页面跳转所带来的参数
-  },
+  //onLoad (options){
+  //  // 页面初始化 options为页面跳转所带来的参数
+  //},
   onReady (){
     // 页面渲染完成
     var that =this

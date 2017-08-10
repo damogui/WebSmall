@@ -1,5 +1,5 @@
 ﻿var app = getApp();
-
+app.globalData.host = "https://www.our666.com";//域名配置
 //远程请求
 var __httpsRequest = {
 
@@ -29,15 +29,15 @@ module.exports = {
 
         jsonUrl.success = obj.success;
 
-        //jsonUrl.data.projectId = app.globalData.projectId;
-        debugger;
+        jsonUrl.data.projectId = app.globalData.projectId;
+
         __httpsRequest.https_request(jsonUrl);
     },
 
     //get 请求
     httpsGetRequest: function (req_url, req_obj, res_func) {
         var jsonUrl = {
-            url: app.req_url,
+            url: app.globalData.host + req_url,
             header: { "Content-Type": "application/json" },
             dataType: "json",
             method: "get",
@@ -50,7 +50,7 @@ module.exports = {
             jsonUrl.data = req_obj;
         }
 
-        //jsonUrl.data.projectId = app.globalData.projectId;
+        jsonUrl.data.projectId = app.globalData.projectId;
 
         __httpRequest.https_request(jsonUrl);
     },
@@ -58,12 +58,11 @@ module.exports = {
     //post 请求
     httpsPostRequest: function (req_url, req_obj, res_func) {
         var jsonUrl = {
-            url: "https://www.our666.com//Home/InsertUser",
+            url: app.globalData.host + req_url,
             header: { "Content-Type": "application/x-www-form-urlencoded" },
             dataType: "json",
             method: "post",
             success: function (res) {
-                debugger;
                 typeof res_func == "function" && res_func(res.data);
             }
         }
@@ -72,7 +71,7 @@ module.exports = {
             jsonUrl.data = req_obj;
         }
 
-        //jsonUrl.data.projectId = app.globalData.projectId;
+        jsonUrl.data.projectId = app.globalData.projectId;
 
         __httpsRequest.https_request(jsonUrl);
     },
@@ -80,7 +79,7 @@ module.exports = {
     //文件上传
     httpsUpload: function (uid, fileDataSource, res_func) {
         dataSource = {
-            url: app.req_url,
+            url: app.globalData.host + req_url,
             header: {
                 "Content-Type": "multipart/form-data"
             },
