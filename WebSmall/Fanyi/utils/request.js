@@ -29,8 +29,8 @@ module.exports = {
 
         jsonUrl.success = obj.success;
 
-        jsonUrl.data.projectId = app.globalData.projectId;
-
+        //jsonUrl.data.projectId = app.globalData.projectId;
+        debugger;
         __httpsRequest.https_request(jsonUrl);
     },
 
@@ -50,7 +50,7 @@ module.exports = {
             jsonUrl.data = req_obj;
         }
 
-        jsonUrl.data.projectId = app.globalData.projectId;
+        //jsonUrl.data.projectId = app.globalData.projectId;
 
         __httpRequest.https_request(jsonUrl);
     },
@@ -58,11 +58,12 @@ module.exports = {
     //post 请求
     httpsPostRequest: function (req_url, req_obj, res_func) {
         var jsonUrl = {
-            url: app.req_url,
+            url: "https://www.our666.com//Home/InsertUser",
             header: { "Content-Type": "application/x-www-form-urlencoded" },
             dataType: "json",
             method: "post",
             success: function (res) {
+                debugger;
                 typeof res_func == "function" && res_func(res.data);
             }
         }
@@ -71,7 +72,7 @@ module.exports = {
             jsonUrl.data = req_obj;
         }
 
-        jsonUrl.data.projectId = app.globalData.projectId;
+        //jsonUrl.data.projectId = app.globalData.projectId;
 
         __httpsRequest.https_request(jsonUrl);
     },

@@ -38,12 +38,13 @@ wx.login({
             wx.getUserInfo({
                 withCredentials: true,
                 success: function(res_user) {
-                    var requestUrl = "https://www.our666.com/Home/InsertUser";
+                    var requestUrl = "/Home/InsertUser";
                     var jsonData = {
                         code: res_login.code,
                         encryptedData: res_user.encryptedData,
                         iv: res_user.iv
                     };
+                    debugger;
                     request.httpsPostRequest(requestUrl, jsonData, function(res) {
                         console.log(res.openId);
                     });
