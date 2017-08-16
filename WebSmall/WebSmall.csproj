@@ -110,6 +110,8 @@
     <Content Include="Fanyi\utils\md5.js" />
     <Content Include="Fanyi\views\index\index.js" />
     <Content Include="Fanyi\views\lishi\lishi.js" />
+    <Content Include="News\.gitignore" />
+    <Content Include="News\app.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -272,6 +274,10 @@
     <Content Include="Fanyi\views\lishi\lishi.wxml" />
     <Content Include="Fanyi\views\lishi\lishi.wxss" />
     <Content Include="WechatSend\Readme.txt" />
+    <Content Include="News\app.json" />
+    <Content Include="News\app.wxss" />
+    <Content Include="News\LICENSE" />
+    <Content Include="News\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -411,6 +417,9 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="News\images\" />
+    <Folder Include="News\utils\" />
+    <Folder Include="News\views\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
