@@ -100,6 +100,7 @@
     <Content Include="bename\pages\app\image\banner.jpg" />
     <Content Include="bename\pages\app\index.js" />
     <Content Include="bename\pages\result\result.js" />
+    <Content Include="Face\app.js" />
     <Content Include="Fanyi\.gitignore" />
     <Content Include="Fanyi\app.js" />
     <Content Include="Fanyi\images\fanyi.png" />
@@ -300,6 +301,9 @@
     <Content Include="News\pages\wx_API\wx_API.json" />
     <Content Include="News\pages\wx_API\wx_API.wxml" />
     <Content Include="News\pages\wx_API\wx_API.wxss" />
+    <Content Include="Face\app.json" />
+    <Content Include="Face\app.wxss" />
+    <Content Include="Face\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -439,6 +443,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Face\pages\" />
+    <Folder Include="Face\utils\" />
     <Folder Include="News\images\" />
     <Folder Include="News\views\" />
     <Folder Include="obj\Debug\TempPE\" />
