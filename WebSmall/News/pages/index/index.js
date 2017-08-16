@@ -8,6 +8,15 @@ var item1 ;
 var item2;
 var items = [];
 
+ //var lishi = [];//wx.getStorageSync('lishi') ||
+ //         var lishiAll = wx.getStorageSync('lishi') || [];
+ //         lishi.unshift(res.data.trans_result[0]);
+ //         lishiAll.unshift(res.data.trans_result[0]);
+ //           wx.setStorage({
+ //               key: "lishi",
+ //               data: lishi
+ //           });
+
 function  GetData() {
 
     //创建一个dialog
@@ -29,9 +38,12 @@ function  GetData() {
         success: function (res) {
             debugger;
             var hq_str_sz300059 = res.data.split('=')[1];
-            item1 = hq_str_sz300059.split(',')[3];
+            item1 = "东方财富:" + hq_str_sz300059.split(',')[3];
             items.push(item1);
-
+            wx.setStorage({
+                               key: "lishi",
+                               data: items
+                           });
             // success
             wx.hideToast();
             // console.log('服务器返回' + res.data);
@@ -55,9 +67,13 @@ function  GetData() {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function(res) {
-            var hq_str_sz300059 = res.data.split('=')[1];
-            item2 = hq_str_sz300059.split(',')[3];
+            var xyd = res.data.split('=')[1];
+            item2 = "信雅达:" + xyd.split(',')[3];
             items.push(item2);
+            //wx.setStorage({
+            //    key: "lishi",
+            //    data: items
+            //});
             // success
             wx.hideToast();
             // console.log('服务器返回' + res.data);
@@ -83,6 +99,21 @@ Page({
     onLoad: function () {
         GetData();
     },
+    onReady () {
+        // 页面渲染完成
+        var that = this
+        wx.getStorage({
+            key: "lishi",
+            success (res) {
+                if (res.data != null) {
+                    that.setData({
+                        items: items
+                        
+                    })
+                }
+            }
+        })
+    },
    
   data: {
     img_urls: [
@@ -96,15 +127,15 @@ Page({
     duration: 2000,
 
     contents: [0, 1],  //2, 3, 4, 5
-    items: [
+    items: items,//[
         
-      item1,
-     item2
+     // item1,
+     //item2
       //"全能探险家 全新一代路虎发现技术解析",
       //"科技至上 林肯MKZ车机与主动安全体验",
       //"燃料电池VS纯电动 谁会是新能源一哥？",
       //"不朽的传奇 奥迪五缸发动机40年进化史"
-    ],
+    //],
     new_pic: [
       "http://pic.xcarimg.com/img/07news/201610/wNdmGPDBGm1475580976311755147558097631.jpg-200x150.jpg",
       "http://pic.xcarimg.com/img/07news/201610/qnDMIK50ud1475464258081744147546425808.jpg-200x150.jpg"
@@ -119,7 +150,7 @@ Page({
 
   setLoad: function(e) {
     this.setData({
-      load: !this.data.load
+      load: !this.data.load,items:items
     })
   },
 
