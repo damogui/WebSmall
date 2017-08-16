@@ -9,7 +9,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#00BFFF",
-    "navigationBarTitleText": "爱卡汽车",
+    "navigationBarTitleText": "小猪讯息",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
