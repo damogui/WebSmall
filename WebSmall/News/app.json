@@ -1,34 +1,41 @@
 {
-    "pages": [
-        "views/index/index",
-        "views/lishi/lishi"
-    ],
-    "window":{
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "black",
-        "navigationBarTitleText": "翻译",
-        "navigationBarTextStyle": "white",
-        "enablePullDownRefresh":false
-    },
-    "tabBar":{
-        "list":[
-            {
-                "pagePath":"views/index/index",
-                "text": "翻译",
-                "iconPath":"images/fanyi.png",
-                "selectedIconPath":"images/fanyi_selected.png"
-            },
-            {
-                "pagePath":"views/lishi/lishi",
-                "text": "历史(过时)",
-                "iconPath":"images/lishi.png",
-                "selectedIconPath":"images/lishi_selected.png"
-            }
-        ],
-        "color":"#616FB6",
-        "selectedColor":"#1D19E7",
-        "backgroundColor":"black",
-        "borderStyle":"black"
-    },
-    "debug":false
+  "pages":[
+    "pages/index/index",
+    "pages/cars/cars",
+    "pages/car_detail/ao_di/ao_di",
+    "pages/car_detail/super_car/super_car",
+    "pages/wx_API/wx_API"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00BFFF",
+    "navigationBarTitleText": "爱卡汽车",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#00BFFF",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+      "text": "首页",
+      "pagePath": "pages/index/index",
+      "iconPath": "image/shou_ye.png",
+      "selectedIconPath": "image/shou_ye-select.png"
+      }, 
+      {
+        "text": "选车",
+        "pagePath": "pages/cars/cars",
+        "iconPath": "image/xuan_che.png",
+        "selectedIconPath": "image/xuan_che-select.png"
+      },
+      {
+        "text": "WX_API",
+        "pagePath": "pages/wx_API/wx_API",
+        "iconPath": "image/wx_API.png",
+        "selectedIconPath": "image/wx_API-select.png"
+      }
+    ]
+  }
 }

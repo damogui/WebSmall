@@ -110,8 +110,19 @@
     <Content Include="Fanyi\utils\md5.js" />
     <Content Include="Fanyi\views\index\index.js" />
     <Content Include="Fanyi\views\lishi\lishi.js" />
-    <Content Include="News\.gitignore" />
     <Content Include="News\app.js" />
+    <Content Include="News\image\shou_ye-select.png" />
+    <Content Include="News\image\shou_ye.png" />
+    <Content Include="News\image\wx_API-select.png" />
+    <Content Include="News\image\wx_API.png" />
+    <Content Include="News\image\xuan_che-select.png" />
+    <Content Include="News\image\xuan_che.png" />
+    <Content Include="News\pages\cars\cars.js" />
+    <Content Include="News\pages\car_detail\ao_di\ao_di.js" />
+    <Content Include="News\pages\car_detail\super_car\super_car.js" />
+    <Content Include="News\pages\index\index.js" />
+    <Content Include="News\pages\wx_API\wx_API.js" />
+    <Content Include="News\utils\util.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -276,8 +287,19 @@
     <Content Include="WechatSend\Readme.txt" />
     <Content Include="News\app.json" />
     <Content Include="News\app.wxss" />
-    <Content Include="News\LICENSE" />
-    <Content Include="News\README.md" />
+    <Content Include="News\pages\cars\.carsjson" />
+    <Content Include="News\pages\cars\cars.json" />
+    <Content Include="News\pages\cars\cars.wxml" />
+    <Content Include="News\pages\cars\cars.wxss" />
+    <Content Include="News\pages\car_detail\ao_di\ao_di.wxml" />
+    <Content Include="News\pages\car_detail\ao_di\ao_di.wxss" />
+    <Content Include="News\pages\car_detail\super_car\super_car.wxml" />
+    <Content Include="News\pages\car_detail\super_car\super_car.wxss" />
+    <Content Include="News\pages\index\index.wxml" />
+    <Content Include="News\pages\index\index.wxss" />
+    <Content Include="News\pages\wx_API\wx_API.json" />
+    <Content Include="News\pages\wx_API\wx_API.wxml" />
+    <Content Include="News\pages\wx_API\wx_API.wxss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -418,7 +440,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="News\images\" />
-    <Folder Include="News\utils\" />
     <Folder Include="News\views\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
