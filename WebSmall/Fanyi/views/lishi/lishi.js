@@ -30,6 +30,22 @@ Page({
     wx.getStorage({
         key: "lishiAll",
   	success (res){
+
+      if(res.data.length>5){
+        var newaRR=[];
+        for(var i=0;i<5;i++){
+          newaRR.push(res.data[i]);
+     }
+
+     wx.setStorage({
+      key: "lishiAll",
+      data: newaRR
+  });
+
+
+      }
+
+    
   	  that.setData({
   	  	fanyi_lishi:res.data
   	  })
