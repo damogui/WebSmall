@@ -6,7 +6,7 @@ var API_URL1 = "https://hq.sinajs.cn/list=sz300059";
 var API_URL2 = "https://hq.sinajs.cn/list=sh600571";
 var item1 ;
 var item2;
-var items = [];
+var itemall = [];
 
  //var lishi = [];//wx.getStorageSync('lishi') ||
  //         var lishiAll = wx.getStorageSync('lishi') || [];
@@ -37,12 +37,13 @@ function  GetData() {
         }, // 设置请求的 header
         success: function (res) {
            
+            console.log(res.data);
             var hq_str_sz300059 = res.data.split('=')[1];
-            item1 = "东方财富:" + hq_str_sz300059.split(',')[3];
-            items.push(item1);
+            item1 ="东:" + hq_str_sz300059.split(',')[3];
+            itemall.push(item1);
             wx.setStorage({
-                               key: "lishi",
-                               data: items
+                               key: "gdata",
+                               data: itemall
                            });
             // success
             wx.hideToast();
@@ -50,6 +51,7 @@ function  GetData() {
 
         },
         fail: function() {
+            item1 ="失败1";
             // fail
             // wx.hideToast();
         },
@@ -67,19 +69,21 @@ function  GetData() {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function(res) {
+            console.log(res.data);
             var xyd = res.data.split('=')[1];
-            item2 = "信雅达:" + xyd.split(',')[3];
-            items.push(item2);
-            //wx.setStorage({
-            //    key: "lishi",
-            //    data: items
-            //});
+            item2 = "信:" + xyd.split(',')[3];
+            itemall.push(item2);
+            wx.setStorage({
+               key: "gdata",
+               data: itemall
+            });
             // success
             wx.hideToast();
             // console.log('服务器返回' + res.data);
 
         },
         fail: function() {
+            item2 = "失败2" ;
             // fail
             // wx.hideToast();
         },
@@ -100,34 +104,35 @@ Page({
         GetData();
     },
     onReady () {
+      
         // 页面渲染完成
         var that = this
         wx.getStorage({
-            key: "lishi",
+            key: "gdata",
             success (res) {
-                if (res.data != null) {
-                    that.setData({
-                        items: items
-                        
-                    })
-                }
+                console.log(res.data);
+                wx.setData({
+                    items:res.data
+
+                });
+               
             }
         })
     },
    
   data: {
     img_urls: [
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155858_35240.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160029_26399.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155928_68103.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160201_31895.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160229_19490.jpg"
+      "https://www.our666.com//GoodUI/img/yg.jpg",
+      "https://www.our666.com//GoodUI/img/cn.png",
+      "https://www.our666.com//GoodUI/img/erm2.jpg",
+      "https://www.our666.com//GoodUI/img/cover2.jpg",
+      "https://www.our666.com//GoodUI/img/cover3.png"
     ],
     interval: 5000,
     duration: 2000,
 
     contents: [0, 1],  //2, 3, 4, 5
-    items: items,//[
+     items: itemall,//[
         
      // item1,
      //item2
@@ -137,8 +142,8 @@ Page({
       //"不朽的传奇 奥迪五缸发动机40年进化史"
     //],
     new_pic: [
-      "http://pic.xcarimg.com/img/07news/201610/wNdmGPDBGm1475580976311755147558097631.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201610/qnDMIK50ud1475464258081744147546425808.jpg-200x150.jpg"
+      "https://www.our666.com//GoodUI/img/yg.jpg",
+      "https://www.our666.com//GoodUI/img/cn.png"
       //"http://pic.xcarimg.com/img/07news/201609/GSJZ0C7c3x1475116821458482147511682145.jpg-200x150.jpg",
       //"http://pic.xcarimg.com/img/07news/201609/CtdlTtd2El1475067775454577147506777545.jpg-200x150.jpg",
       //"http://pic.xcarimg.com/img/07news/201609/mvaZ75mVWE1473064107454160147306410745.jpg-200x150.jpg",
@@ -150,7 +155,7 @@ Page({
 
   setLoad: function(e) {
     this.setData({
-      load: !this.data.load,items:items
+      load: !this.data.load
     })
   },
 

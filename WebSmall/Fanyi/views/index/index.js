@@ -257,6 +257,9 @@ Page({
         })
     },
     item_click(e){
+        //console.log(e.currentTarget.dataset.tt);
+        console.log(e.currentTarget.dataset.g);
+        
         // console.log(e.currentTarget.dataset.text)
         // console.log("id:"+e.currentTarget.id);
         

@@ -26,7 +26,7 @@
 			<view class='text-center bg-success panel-heading panel-primary'>
 				<text class='result_text'>{{item.src}}</text>
 			</view>
-			<view class='text-center panel-body panel-primary' bindtap="item_click" id="{{item.dst}}" data-id="{{item.dst}}" data-text="{{item.dst}}">
+			<view class='text-center panel-body panel-primary' bindtap="item_click" id="{{item.dst}}" data-id="{{item.dst}}" data-tt="{{item.dst}}"  data-g="你好">
 				<text class='result_text' id="datauser">{{item.dst}}</text>
 				<audio    src="https://dict.youdao.com/dictvoice?audio={{item.dst}}&type=1" id="myAudio"
 				   ></audio>

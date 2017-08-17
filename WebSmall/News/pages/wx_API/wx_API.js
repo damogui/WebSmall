@@ -22,8 +22,8 @@ Page({
         imageList: wx.getStorageSync('imageList'),
 
         /* 音乐数据 */
-        src: "http://dl.stream.qqmusic.qq.com/C200000NU7383cWdmL.m4a?vkey=E31E70383485A0459D7205BB83D038F37F75AF304BCEA8EF9CBAFB894A6DF31637EAB85BD4DBF49345768B96F6DBF709971AF5AA97D17B9F&guid=5261462800&fromtag=30",
-        poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000002dvsSx27UO6o.jpg?max_age=2592000',
+        src: "",
+        poster: '',
         name: 'Until You',
         author: 'Shayne Ward',
     },
