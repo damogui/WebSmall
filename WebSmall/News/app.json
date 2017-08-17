@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/cars/cars",
     "pages/car_detail/ao_di/ao_di",
-    "pages/car_detail/super_car/super_car",
+  
     "pages/wx_API/wx_API"
   ],
   "window":{
@@ -23,12 +23,6 @@
       "pagePath": "pages/index/index",
       "iconPath": "image/shou_ye.png",
       "selectedIconPath": "image/shou_ye-select.png"
-      }, 
-      {
-        "text": "选车",
-        "pagePath": "pages/cars/cars",
-        "iconPath": "image/xuan_che.png",
-        "selectedIconPath": "image/xuan_che-select.png"
       },
       {
         "text": "WX_API",
