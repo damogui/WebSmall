@@ -1,12 +1,12 @@
 Page({
     data: {
         imgUrls: [
-            "http://img1.xcarimg.com/b63/s7736/c_20160511153957007951768554208.jpg",
-            "http://img1.xcarimg.com/b63/s7736/c_20160511153948903325305587219.jpg",
-            "http://img1.xcarimg.com/b63/s7736/c_20160324172935416694857347161.jpg",
-            "http://img1.xcarimg.com/b63/s7736/c_20160918132004359674866549395.jpg",
-            "http://img1.xcarimg.com/b63/s7736/c_20160918132002131163573867539.jpg",
-            "http://img1.xcarimg.com/b63/s7736/c_20160729071450170685818327422.jpg"
+            // "http://img1.xcarimg.com/b63/s7736/c_20160511153957007951768554208.jpg",
+            // "http://img1.xcarimg.com/b63/s7736/c_20160511153948903325305587219.jpg",
+            // "http://img1.xcarimg.com/b63/s7736/c_20160324172935416694857347161.jpg",
+            // "http://img1.xcarimg.com/b63/s7736/c_20160918132004359674866549395.jpg",
+            // "http://img1.xcarimg.com/b63/s7736/c_20160918132002131163573867539.jpg",
+            // "http://img1.xcarimg.com/b63/s7736/c_20160729071450170685818327422.jpg"
         ],
         duration: 3000,
 

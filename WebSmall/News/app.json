@@ -9,7 +9,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#00BFFF",
-    "navigationBarTitleText": "小猪讯息",
+    "navigationBarTitleText": "小猪资讯",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {

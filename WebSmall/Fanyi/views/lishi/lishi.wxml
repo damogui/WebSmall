@@ -4,8 +4,10 @@
 			<view class='text-center bg-success panel-heading panel-primary'>
 				 <text class='result_text'>{{item.src}}</text>
 			</view>
-			<view class='text-center panel-body panel-primary'>
+			<view class='text-center panel-body panel-primary'  bindtap="item_click" data-id="{{index}}">
 				 <text class='result_text'>{{item.dst}}</text>
+				 <audio    src="https://dict.youdao.com/dictvoice?audio={{item.dst}}&type=1" id="myAudio{{index}}"
+				 ></audio>
 			</view>
 		</view>
 	</view>

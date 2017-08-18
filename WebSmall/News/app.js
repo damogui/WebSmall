@@ -27,5 +27,6 @@ App({
   globalData:{
     // 登录
     hasLogin: false,
+    openid:0
   }
 })

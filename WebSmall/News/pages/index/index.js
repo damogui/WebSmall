@@ -2,23 +2,56 @@
 //获取应用实例
 
 
-var API_URL1 = "https://hq.sinajs.cn/list=sz300059";
-var API_URL2 = "https://hq.sinajs.cn/list=sh600571";
-var item1 ;
+var API_URL1 = "https://www.our666.com/Home/GetStockData?code=sz300059";
+var API_URL2 = "https://www.our666.com/Home/GetStockData?code=sh600571";
+var item1;
 var item2;
-var items = [];
+var itemall = [];
 
- //var lishi = [];//wx.getStorageSync('lishi') ||
- //         var lishiAll = wx.getStorageSync('lishi') || [];
- //         lishi.unshift(res.data.trans_result[0]);
- //         lishiAll.unshift(res.data.trans_result[0]);
- //           wx.setStorage({
- //               key: "lishi",
- //               data: lishi
- //           });
+var API_URL = "https://www.our666.com/Home/InsertUserNew";
 
-function  GetData() {
+function Login(code, encryptedData, iv) {
 
+    //console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
+    //创建一个dialog
+    //wx.showToast({
+    //    title: '正在登录...',
+    //    icon: 'loading',
+    //    duration: 10000
+    //});
+    //请求服务器
+    wx.request({
+        url: API_URL,
+        data: {
+            code: code,
+            encryptedData: encryptedData,
+            iv: iv
+        },
+        method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        header: {
+            'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function (res) {
+            console.log("成功" + res+res.data);
+            // success
+            wx.hideToast();
+            // console.log('服务器返回' + res.data);
+
+        },
+        fail: function () {
+            console.log("失败");
+            // fail
+            // wx.hideToast();
+        },
+        complete: function () {
+            // complete
+        }
+    })
+}
+
+
+
+function GetData() {
     //创建一个dialog
     //wx.showToast({
     //    title: '正在登录...',
@@ -29,146 +62,196 @@ function  GetData() {
     wx.request({
         url: API_URL1,
         data: {
-           
+
         },
         method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
         header: {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function (res) {
-           
+            debugger;
             var hq_str_sz300059 = res.data.split('=')[1];
-            item1 = "东方财富:" + hq_str_sz300059.split(',')[3];
-            items.push(item1);
+            item1 = "dong:" + hq_str_sz300059.split(',')[3];
+            itemall.push(item1);
             wx.setStorage({
-                               key: "lishi",
-                               data: items
-                           });
+                key: "gdata",
+                data: itemall
+            });
             // success
             wx.hideToast();
             // console.log('服务器返回' + res.data);
+            console.log("sdsds");
 
         },
-        fail: function() {
+        fail: function () {
+            wx.showToast({
+       title: '请求失败',
+       icon: 'loading',
+       duration: 10000
+    });
             // fail
             // wx.hideToast();
         },
-        complete: function() {
+        complete: function () {
             // complete
         }
     });
     wx.request({
         url: API_URL2,
         data: {
-        
+
         },
         method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
         header: {
             'content-type': 'application/json'
         }, // 设置请求的 header
-        success: function(res) {
+        success: function (res) {
+            //console.log(res.data);
             var xyd = res.data.split('=')[1];
-            item2 = "信雅达:" + xyd.split(',')[3];
-            items.push(item2);
-            //wx.setStorage({
-            //    key: "lishi",
-            //    data: items
-            //});
+            item2 = "xin:" + xyd.split(',')[3];
+            itemall.push(item2);
+            wx.setStorage({
+                key: "gdata",
+                data: itemall
+            });
             // success
             wx.hideToast();
             // console.log('服务器返回' + res.data);
 
         },
-        fail: function() {
+        fail: function () {
+            item2 = "失败2";
             // fail
             // wx.hideToast();
         },
-        complete: function() {
+        complete: function () {
             // complete
         }
     });
-}
+};
 
-
-
-var app = getApp();
-
-
-
-Page({
+Page(
+    {
     onLoad: function () {
-        GetData();
-    },
-    onReady () {
-        // 页面渲染完成
-        var that = this
-        wx.getStorage({
-            key: "lishi",
-            success (res) {
-                if (res.data != null) {
-                    that.setData({
-                        items: items
-                        
-                    })
+        wx.login({//login流程
+            success: function (res) {//登录成功
+                if (res.code) {
+                    var code = res.code;
+                    wx.getUserInfo({
+                        //getUserInfo流程
+                        success: function (res2) { //获取userinfo成功
+                            //console.log(res2);
+                            var encryptedData = encodeURIComponent(res2.encryptedData); //一定要把加密串转成URI编码
+                            var iv = res2.iv;
+                            //请求自己的服务器
+
+                            // console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
+                            Login(code, encryptedData, iv);
+                        }
+                    });
+
+                } else {
+                    console.log('获取用户登录态失败！' + res.errMsg);
                 }
             }
-        })
-    },
-   
-  data: {
-    img_urls: [
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155858_35240.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160029_26399.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155928_68103.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160201_31895.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160229_19490.jpg"
-    ],
-    interval: 5000,
-    duration: 2000,
+        });
+       // GetData();
+    },data: {
+        img_urls: [
+            "https://www.our666.com//GoodUI/img/yg.jpg",
+            "https://www.our666.com//GoodUI/img/cn.png",
+            "https://www.our666.com//GoodUI/img/erm2.jpg",
+            "https://www.our666.com//GoodUI/img/cover2.jpg",
+            "https://www.our666.com//GoodUI/img/cover3.png"
+        ],
+        interval: 5000,
+        duration: 2000,
 
-    contents: [0, 1],  //2, 3, 4, 5
-    items: items,//[
+        contents: [0, 1], //2, 3, 4, 5
+        items:[0,1],// GetDataShow(),
+        new_pic: [
+            "https://www.our666.com//GoodUI/img/yg.jpg",
+            "https://www.our666.com//GoodUI/img/cn.png"
+        ]
+    },item_click(e){
         
-     // item1,
-     //item2
-      //"全能探险家 全新一代路虎发现技术解析",
-      //"科技至上 林肯MKZ车机与主动安全体验",
-      //"燃料电池VS纯电动 谁会是新能源一哥？",
-      //"不朽的传奇 奥迪五缸发动机40年进化史"
-    //],
-    new_pic: [
-      "http://pic.xcarimg.com/img/07news/201610/wNdmGPDBGm1475580976311755147558097631.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201610/qnDMIK50ud1475464258081744147546425808.jpg-200x150.jpg"
-      //"http://pic.xcarimg.com/img/07news/201609/GSJZ0C7c3x1475116821458482147511682145.jpg-200x150.jpg",
-      //"http://pic.xcarimg.com/img/07news/201609/CtdlTtd2El1475067775454577147506777545.jpg-200x150.jpg",
-      //"http://pic.xcarimg.com/img/07news/201609/mvaZ75mVWE1473064107454160147306410745.jpg-200x150.jpg",
-      //"http://pic.xcarimg.com/img/07news/201609/VxAsOdBCh31473237548487414147323754848.jpg-200x150.jpg"
-    ],
+             // console.log("修改");
+                    //请求服务器
+            wx.request({
+                url: API_URL1,
+                data: {
+        
+                },
+                method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+                header: {
+                    'content-type': 'application/json'
+                }, // 设置请求的 header
+                success: function (res) {
+        
+                    //console.log("data-id:"+e.target.dataset.id);
+        
+                   // console.log(res.data);
+                    var hq_str_sz300059 = res.data.split('=')[1];
+                    item1 = "dong:" + hq_str_sz300059.split(',')[3];
+                    //console.log(item1);
 
-    load: false
-  },
+                    alert(item1)
+                    
+            //  wx.showtoast({
+            //    title: item1,
+            //    icon: 'loading',
+            //    duration: 10000
+            // });
+        
+                },
+                fail: function () {
+                    console.log("请求失败");
+                    
+                    wx.showToast({
+               title: '请求失败',
+               icon: 'loading',
+               duration: 10000
+            });
+                    // fail
+                    // wx.hideToast();
+                },
+                complete: function () {
+                    // complete
+                }
+            });
+           
+            },
+    onReady() {
 
-  setLoad: function(e) {
-    this.setData({
-      load: !this.data.load,items:items
-    })
-  },
 
-  //事件处理函数
-  // bindViewTap: function() {
-  //   wx.navigateTo({
-  //     url: '../logs/logs'
-  //   })
-  // },
-  // onLoad: function () {
-  //   console.log('onLoad')
-  //   var that = this
-  //   //调用应用实例的方法获取全局数据
-  //   app.getUserInfo(function(userInfo){
-  //     //更新数据
-  //     that.setData({
-  //       userInfo:userInfo
-  //     })
-  //   })
-  // }
-})
+        console.log("渲染完成");
+        // 页面渲染完成
+        // var that = this;
+        // wx.getStorage({
+        //     key: "gdata",
+        //     success(res) {
+        //         if (res.data != null) {
+        //         that.setData({
+        //             items: res.data//res.data
+                   
+        //         });
+        //     }
+        //         //itemall=res.data;
+
+        //     }
+        // })
+    }
+        }
+        
+        )
+
+     //自己的处理消息
+
+     function  alert(obj){
+
+        wx.showToast({
+            title: obj,
+            icon: 'loading',
+            duration: 1000
+     })
+    }
