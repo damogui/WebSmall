@@ -14,11 +14,11 @@ function Login(code, encryptedData, iv) {
 
     //console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
     //创建一个dialog
-    wx.showToast({
-        title: '正在登录...',
-        icon: 'loading',
-        duration: 10000
-    });
+    //wx.showToast({
+    //    title: '正在登录...',
+    //    icon: 'loading',
+    //    duration: 10000
+    //});
     //请求服务器
     wx.request({
         url: API_URL,
@@ -69,8 +69,7 @@ function GetData() {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function (res) {
-
-           // console.log(res.data);
+            debugger;
             var hq_str_sz300059 = res.data.split('=')[1];
             item1 = "dong:" + hq_str_sz300059.split(',')[3];
             itemall.push(item1);
