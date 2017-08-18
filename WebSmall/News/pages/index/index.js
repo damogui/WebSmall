@@ -72,7 +72,7 @@ function GetData() {
 
            // console.log(res.data);
             var hq_str_sz300059 = res.data.split('=')[1];
-            item1 = "东:" + hq_str_sz300059.split(',')[3];
+            item1 = "dong:" + hq_str_sz300059.split(',')[3];
             itemall.push(item1);
             wx.setStorage({
                 key: "gdata",
@@ -81,6 +81,7 @@ function GetData() {
             // success
             wx.hideToast();
             // console.log('服务器返回' + res.data);
+            console.log("sdsds");
 
         },
         fail: function () {
@@ -168,7 +169,7 @@ Page(
         duration: 2000,
 
         contents: [0, 1], //2, 3, 4, 5
-         items:[0,1],// GetDataShow(),
+        items:[0,1],// GetDataShow(),
         new_pic: [
             "https://www.our666.com//GoodUI/img/yg.jpg",
             "https://www.our666.com//GoodUI/img/cn.png"
@@ -246,7 +247,7 @@ Page(
         )
 
      //自己的处理消息
-     
+
      function  alert(obj){
 
         wx.showToast({
