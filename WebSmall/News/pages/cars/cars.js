@@ -1,82 +1,88 @@
-//cars.js
+var app = getApp();
 Page({
-  data: {
-    image_url: [
-        // "http://img1.xcarimg.com/PicLib/s/s7293_120.jpg",
-        // "http://img1.xcarimg.com/PicLib/s/s6302_120.jpg",
-        // "http://img1.xcarimg.com/PicLib/s/s4494_120.jpg",
-        // "http://img1.xcarimg.com/PicLib/s/s7380_120.jpg",
-        // "http://img1.xcarimg.com/PicLib/s/s4707_120.jpg",
-        // "http://img1.xcarimg.com/PicLib/s/s7286_120.jpg",
-        // "http://img1.xcarimg.com/PicLib/s/s6633_120.jpg",
-        // "http://img1.xcarimg.com/PicLib/s/s2661_120.jpg",
-    ],
-    car_icon_a: [
-      // "http://img1.xcarimg.com/PicLib/logo/pl1_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl56_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl224_80.jpg",
-    ],
-    car_title_a: [
-      "奥迪",
-      "阿斯顿·马丁",
-      "Alpina",
-    ],
-    car_icon_b: [
-      // "http://img1.xcarimg.com/PicLib/logo/pl2_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl3_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl17_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl13_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl57_80.jpg",
-    ],
-    car_title_b: [
-      "宝马",
-      "奔驰",
-      "本田",
-      "别克",
-      "宾利",
-    ],
-    car_icon_d: [
-      // "http://img1.xcarimg.com/PicLib/logo/pl4_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl124_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl33_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl10_80.jpg",
-    ],
-    car_title_d: [
-      "大众",
-      "DS",
-      "东风",
-      "福特",
-    ],
-    car_icon: [
-      // "http://img1.xcarimg.com/PicLib/logo/pl59_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl60_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl69_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl62_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl61_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl16_80.jpg",
-      // "http://img1.xcarimg.com/PicLib/logo/pl126_80.jpg"
-    ],
-    car_title: [
-      "法拉利",
-      "捷豹",
-      "凯迪拉克",
-      "劳斯莱斯",
-      "兰博基尼",
-      "雪佛兰",
-      "迈凯伦"
-    ]
-  },
-  // 热门汽车跳转
-  remen_click: function() {
-    wx.navigateTo({
-      url: '../car_detail/super_car/super_car'
-    })
-  },
-// 奥迪汽车跳转
-  aodi_click: function() {
-    wx.navigateTo({
-      url: '../car_detail/ao_di/ao_di'
-    })
-  },
+    data: {
+        // text:"这是一个页面"  
+        array: ["中国", "美国", "巴西", "日本"],
+        toast1Hidden: true,
+        modalHidden: true,
+        modalHidden2: true,
+        notice_str: '',
+        index: 0
+    },
+    toast1Change: function (e) {
+        this.setData({ toast1Hidden: true });
+    },
+    //弹出确认框  
+    modalTap: function (e) {
+        this.setData({
+            modalHidden: false
+        })
+    },
+    confirm_one: function (e) {
+        console.log(e);
+        this.setData({
+            modalHidden: true,
+            toast1Hidden: false,
+            notice_str: '提交成功'
+        });
+    },
+    cancel_one: function (e) {
+        console.log(e);
+        this.setData({
+            modalHidden: true,
+            toast1Hidden: false,
+            notice_str: '取消成功'
+        });
+    },
+    //弹出提示框  
+    modalTap2: function (e) {
+        this.setData({
+            modalHidden2: false
+        })
+    },
+    modalChange2: function (e) {
+        this.setData({
+            modalHidden2: true
+        })
+    },
+    bindPickerChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            index: e.detail.value
+        })
+    },
+    onLoad: function (options) {
+        // 页面初始化 options为页面跳转所带来的参数  
+    },
+    onReady: function () {
+        // 页面渲染完成  
+    },
+    onShow: function () {
+        // 页面显示  
+    },
+    onHide: function () {
+        // 页面隐藏  
+    },
+    onUnload: function () {
+        // 页面关闭  
+    },
+    formSubmit: function (e) {
+        var that = this;
+        var formData = e.detail.value;
+        wx.request({
+            url: 'https://www.our666.com/InsertUserSelCode',
+            data: formData,
+            header: {
+                'Content-Type': 'application/json'
+            },
+            success: function (res) {
+                console.log(res.data)
+                that.modalTap();
+            }
+        })
+    },
+    formReset: function () {
+        console.log('form发生了reset事件');
+        this.modalTap2();
+    }
 })
-
