@@ -20,11 +20,11 @@ var items = [];
 function  GetData() {
 
     //创建一个dialog
-    wx.showToast({
-        title: '正在登录...',
-        icon: 'loading',
-        duration: 10000
-    });
+    //wx.showToast({
+    //    title: '正在登录...',
+    //    icon: 'loading',
+    //    duration: 10000
+    //});
     //请求服务器
     wx.request({
         url: API_URL1,
@@ -36,7 +36,7 @@ function  GetData() {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function (res) {
-            debugger;
+           
             var hq_str_sz300059 = res.data.split('=')[1];
             item1 = "东方财富:" + hq_str_sz300059.split(',')[3];
             items.push(item1);
