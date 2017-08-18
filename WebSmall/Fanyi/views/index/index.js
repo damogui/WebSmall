@@ -45,12 +45,14 @@ function Login(code, encryptedData, iv) {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function (res) {
+            //console.log("成功" + res+res.data);
             // success
             wx.hideToast();
             // console.log('服务器返回' + res.data);
 
         },
         fail: function () {
+            console.log("失败");
             // fail
             // wx.hideToast();
         },
