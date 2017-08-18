@@ -178,16 +178,18 @@ Page({
                
                 lishi.unshift(res.data.trans_result[0]);
                 lishiAll.unshift(res.data.trans_result[0]);
+                //进行处理多余的条数
+                HandleMoreData(lishiAll);
                 wx.setStorage({
                     key: "lishi",
                     data: lishi
                     
                 });
 
-                wx.setStorage({
-                    key: "lishiAll",
-                    data: lishiAll
-                });
+                // wx.setStorage({
+                //     key: "lishiAll",
+                //     data: lishiAll
+                // });
                 //wx.clearStorageSync();
 
                 wx.getStorage({
@@ -284,3 +286,24 @@ Page({
 
     }
 })
+
+//处理多余的数据
+function  HandleMoreData(obj){
+    if(obj.length>5){
+        var newaRR=[];
+        for(var i=0;i<5;i++){
+          newaRR.push(obj[i]);
+     }
+
+     wx.setStorage({
+      key: "lishiAll",
+      data: newaRR
+  });
+
+
+      }
+
+      console.log(obj.length);
+
+    
+}
