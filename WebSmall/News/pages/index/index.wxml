@@ -17,7 +17,7 @@
   <view class="news">
     <block wx:for="{{contents}}">
       <view class="new" >
-        <view class="text">
+        <view class="text" bindtap="item_click"  data-id="{{items[index]}}">
           <text>{{items[index]}}</text>
         </view>
         <view class="pic">
