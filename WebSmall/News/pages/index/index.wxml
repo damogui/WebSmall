@@ -1,4 +1,6 @@
 <!--index.wxml-->
+
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit = "true">
 <view class="container">
   <view class="top_img">
     <swiper indicator-dots="true" autoplay="true" duration="{{duration}}" interval="{{interval}}">
@@ -31,3 +33,8 @@
    更多
   </button>-->
 </view>
+  <view class="btn-area">
+    <button formType="submit">Submit</button>
+    <button formType="reset">Reset</button>
+  </view>
+</form>

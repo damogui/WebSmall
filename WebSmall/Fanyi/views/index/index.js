@@ -65,6 +65,7 @@ function Login(code, encryptedData, iv) {
 
 
 Page({
+ 
     onLoad: function () {
         //console.log("iv");
         wx.login({//login流程
