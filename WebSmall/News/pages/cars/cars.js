@@ -71,7 +71,9 @@ Page({
         var formData = e.detail.value;
         wx.request({
             url: 'https://www.our666.com/InsertUserSelCode',
-            data: formData,
+            data: {
+               data:formData}
+            ,
             header: {
                 'Content-Type': 'application/json'
             },
