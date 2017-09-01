@@ -9,6 +9,7 @@ var item2;
 var itemall = [];
 
 var API_URL = "https://www.our666.com/Home/InsertUserNew";
+var API_URL2 = "https://www.our666.com/Home/InsertUserForm";
 
 function Login(code, encryptedData, iv) {
 
@@ -32,9 +33,16 @@ function Login(code, encryptedData, iv) {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function (res) {
-            console.log("成功" + res+res.data);
+            console.log("成功" +  res.data.split('openId:')[1]);
+           
+            wx.setStorage({
+                key: "openid",
+                data: res.data.split('openId:')[1]
+            });
             // success
             wx.hideToast();
+
+            return  res.data.split('openId:')[1];
             // console.log('服务器返回' + res.data);
 
         },
@@ -48,6 +56,40 @@ function Login(code, encryptedData, iv) {
         }
     })
 }
+
+///插入数据
+function InsertForm(openId, formId) {
+    
+     
+        //请求服务器
+        wx.request({
+            url: API_URL2,
+            data: {
+                openId: openId,
+                formId: formId
+             
+            },
+            method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+            header: {
+                'content-type': 'application/json'
+            }, // 设置请求的 header
+            success: function (res) {
+                console.log("成功" + res+res.data);
+                // success
+                wx.hideToast();
+                // console.log('服务器返回' + res.data);
+    
+            },
+            fail: function () {
+                console.log("失败");
+                // fail
+                // wx.hideToast();
+            },
+            complete: function () {
+                // complete
+            }
+        })
+    }
 
 
 
@@ -69,7 +111,7 @@ function GetData() {
             'content-type': 'application/json'
         }, // 设置请求的 header
         success: function (res) {
-            debugger;
+          
             var hq_str_sz300059 = res.data.split('=')[1];
             item1 = "dong:" + hq_str_sz300059.split(',')[3];
             itemall.push(item1);
@@ -132,6 +174,25 @@ function GetData() {
 
 Page(
     {
+    formSubmit: function (e) {
+
+          // var that = this;
+        wx.getStorage({
+            key: "openid",
+            success(res) {
+              
+                console.log(res.data);
+                if (res.data != null) {
+
+                    InsertForm(res.data,e.detail.formId);
+             
+            }
+                //itemall=res.data;
+
+            }
+        })
+      console.log('form发生了submit事件，fromId为：', e.detail.formId)
+    },
     onLoad: function () {
         wx.login({//login流程
             success: function (res) {//登录成功
@@ -146,7 +207,9 @@ Page(
                             //请求自己的服务器
 
                             // console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
-                            Login(code, encryptedData, iv);
+                      var openid= Login(code, encryptedData, iv);
+
+                         
                         }
                     });
 

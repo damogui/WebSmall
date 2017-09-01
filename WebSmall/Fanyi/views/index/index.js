@@ -65,6 +65,7 @@ function Login(code, encryptedData, iv) {
 
 
 Page({
+ 
     onLoad: function () {
         //console.log("iv");
         wx.login({//login流程
@@ -172,7 +173,7 @@ Page({
                     result_text: res.data.trans_result[0].dst,
                     result: that.data.textarea_text,
                     textarea_text: ""
-                })
+                });
                
                 var lishi = [];//wx.getStorageSync('lishi') ||
                 var lishiAll = wx.getStorageSync('lishiAll') || [];

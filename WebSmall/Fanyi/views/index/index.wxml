@@ -1,3 +1,4 @@
+
 <view class='textarea_view has-success well row'>
 	<image mode="aspectFit" src="{{fanyi_src}}" class="col-1 icon-size-64" />
 	<input bindinput="textarea_bindinput" class="form-control col-5" bindblur="bindTextAreaBlur" placeholder="{{textarea_placeholder}}"
@@ -33,4 +34,5 @@
 			</view>
 		</view>
 	</view>
+  
 </view>
