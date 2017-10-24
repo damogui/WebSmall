@@ -244,6 +244,7 @@ Page({
     //},
     onReady() {
         // 使用 wx.createAudioContext 获取 audio 上下文 context
+        this.audioCtx0 = wx.createAudioContext('myAudio0');
     this.audioCtx = wx.createAudioContext('myAudio');
     
         // 页面渲染完成
@@ -260,6 +261,23 @@ Page({
                 }
             }
         })
+    },
+    item0_click(e){
+        //console.log(e.currentTarget.dataset.tt);
+        console.log(e.currentTarget.dataset.g);
+        
+        // console.log(e.currentTarget.dataset.text)
+        // console.log("id:"+e.currentTarget.id);
+        
+        //  console.log("data-id:"+e.target.dataset.id);
+       
+      
+         this.audioCtx0.play();
+        //  this.audioCtx.pause();
+        // let text = this.data.textarea_text;
+        // console.log(text);
+
+
     },
     item_click(e){
         //console.log(e.currentTarget.dataset.tt);
