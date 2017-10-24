@@ -2,7 +2,7 @@
 <view class='textarea_view has-success well row'>
 	<image mode="aspectFit" src="{{fanyi_src}}" class="col-1 icon-size-64" />
 	<input bindinput="textarea_bindinput" class="form-control col-5" bindblur="bindTextAreaBlur" placeholder="{{textarea_placeholder}}"
-	    value="{{textarea_text}}" bindfocus="bindTextAreaFocus" />
+	    value="{{textarea_text}}" bindfocus="bindTextAreaFocus"  bindconfirm="btn_click"/>
 </view>
 <view class='well bg-warning row'>
 	<button size="mini" type="primary" bindtap="btn_click" class="col-9 bg-primary">

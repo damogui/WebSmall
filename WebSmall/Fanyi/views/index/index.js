@@ -129,9 +129,11 @@ Page({
         })
     },
     textarea_bindinput(res) {
+      
         this.setData({
             textarea_text: res.detail.value
         })
+
     },
     bindTextAreaFocus() {
         this.setData({
@@ -189,10 +191,10 @@ Page({
                     
                 });
 
-                // wx.setStorage({
-                //     key: "lishiAll",
-                //     data: lishiAll
-                // });
+                wx.setStorage({
+                    key: "lishiAll",
+                    data: lishiAll
+                });
                 //wx.clearStorageSync();
 
                 wx.getStorage({
@@ -310,7 +312,8 @@ Page({
 
 //处理多余的数据
 function  HandleMoreData(obj){
-    if(obj.length>5){
+    
+    if(obj.length>4){
         var newaRR=[];
         for(var i=0;i<5;i++){
           newaRR.push(obj[i]);
@@ -324,7 +327,9 @@ function  HandleMoreData(obj){
 
       }
 
-      console.log(obj.length);
+   
 
     
 }
+
+//回车事件为bindconfirm进行绑定
