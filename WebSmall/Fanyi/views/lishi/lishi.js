@@ -50,9 +50,12 @@ Page({
         key: "lishiAll",
   	success (res){
 
-      if(res.data.length>5){
+      if(res.data.length>4){
+       
         var newaRR=[];
-        for(var i=0;i<5;i++){
+        for(var i=0;i<6;i++){
+       
+          
           newaRR.push(res.data[i]);
      }
 
