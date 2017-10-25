@@ -285,6 +285,8 @@
     <Content Include="Fanyi\views\lishi\lishi.json" />
     <Content Include="Fanyi\views\lishi\lishi.wxml" />
     <Content Include="Fanyi\views\lishi\lishi.wxss" />
+    <Content Include="Test\Test.html" />
+    <Content Include="Test\test.js" />
     <Content Include="WechatSend\Readme.txt" />
     <Content Include="News\app.json" />
     <Content Include="News\app.wxss" />

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8"/>
+
+
+    <script>
+        $.ajax({
+            type: 'post',
+            url: '/', dataType: 'json',
+            data: { data: JSON.stringify(jsonAdd) },
+            success: function (data) {
+                if (data && data.Data > 0) {
+
+                } else {
+                    alert('提交失败');
+                }
+            }
+        });
+
+        var module = {
+            init: function () {
+                //todo 逻辑函数
+                this.render();
+                this.initBtns();
+            },
+
+            render: function () {
+
+
+
+            },
+            initBtns: function () {
+                //todo 绑定事件
+
+                $("body").delegate("#reSetOk", "click", function () {
+
+                    //提交表单
+                    $.ajax({
+                        type: "post",
+                        url: "",
+                        dataType: "json",
+                        data: {
+
+                            stuId: stuId
+                        },
+                        success: function (data) {
+
+
+                        }
+                    });
+
+
+                });
+
+            }
+
+
+        };
+
+        $(function () {
+            module.init();
+
+        });
+
+     
+
+
+    
+                
+
+    </script>
+</head>
+
+<body>
+
+   
+
+</body>
+</html>
