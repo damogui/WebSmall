@@ -1,8 +1,20 @@
+<view class='textarea_view has-success well row'>
+
+    <input bindinput="textarea_bindinput" class="form-control col-5" bindblur="bindTextAreaBlur" placeholder="{{textarea_placeholder}}" value="{{textarea_text}}" bindfocus="bindTextAreaFocus" bindconfirm="btn_click" />
+</view>
+<view class='well bg-warning row'>
+    <button size="mini" type="primary" bindtap="btn_click" class="col-9 bg-primary">
+		 <text class='text-primary'>{{btn_text}}</text>
+	</button>
+
+</view>
+
+
 <view class="map_container">
-  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
+    <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
 </view>
 <view class="place_info">
-  <text>{{placeData.title}}</text>
-  <text>{{placeData.address}}</text>
-  <text>{{placeData.telephone}}</text>
+    <text>{{placeData.title}}</text>
+    <text>{{placeData.address}}</text>
+    <text>{{placeData.telephone}}</text>
 </view>
