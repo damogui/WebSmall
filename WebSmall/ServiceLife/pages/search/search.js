@@ -82,13 +82,9 @@ Page({
             markers: markersTemp
         });
     },
-    bindTextAreaBlur(res) {
-        this.setData({
-            textarea_text: res.detail.value,
-            fanyi_src: '../../img/fanyi.png'
-        })
-    },
+
     btn_click() {
+
         let text = this.data.textarea_text;
         if (text == '' || text == null) {
             wx.showToast({
@@ -106,5 +102,19 @@ Page({
 
         queryStr = text;
         this.onLoad();
+    },
+    bindTextAreaBlur(res) {
+
+        this.setData({
+            textarea_text: res.detail.value,
+            fanyi_src: '../../img/fanyi.png'
+        })
+    },
+    textarea_bindinput(res) {
+
+        this.setData({
+            textarea_text: res.detail.value
+        })
+
     }
 })
