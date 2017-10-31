@@ -285,6 +285,14 @@
     <Content Include="Fanyi\views\lishi\lishi.json" />
     <Content Include="Fanyi\views\lishi\lishi.wxml" />
     <Content Include="Fanyi\views\lishi\lishi.wxss" />
+    <Content Include="ServiceLife\app.js" />
+    <Content Include="ServiceLife\img\marker_red.png" />
+    <Content Include="ServiceLife\img\marker_yellow.png" />
+    <Content Include="ServiceLife\libs\bmap-wx.min.js" />
+    <Content Include="ServiceLife\pages\regeocoding\regeocoding.js" />
+    <Content Include="ServiceLife\pages\search\search.js" />
+    <Content Include="ServiceLife\pages\suggestion\suggestion.js" />
+    <Content Include="ServiceLife\pages\weather\weather.js" />
     <Content Include="Test\Test.html" />
     <Content Include="Test\test.js" />
     <Content Include="WechatSend\Readme.txt" />
@@ -306,6 +314,22 @@
     <Content Include="Face\app.json" />
     <Content Include="Face\app.wxss" />
     <Content Include="Face\README.md" />
+    <Content Include="ServiceLife\.DS_Store" />
+    <Content Include="ServiceLife\app.json" />
+    <Content Include="ServiceLife\app.wxss" />
+    <Content Include="ServiceLife\jsconfig.json" />
+    <Content Include="ServiceLife\pages\regeocoding\regeocoding.json" />
+    <Content Include="ServiceLife\pages\regeocoding\regeocoding.wxml" />
+    <Content Include="ServiceLife\pages\regeocoding\regeocoding.wxss" />
+    <Content Include="ServiceLife\pages\search\search.json" />
+    <Content Include="ServiceLife\pages\search\search.wxml" />
+    <Content Include="ServiceLife\pages\search\search.wxss" />
+    <Content Include="ServiceLife\pages\suggestion\suggestion.json" />
+    <Content Include="ServiceLife\pages\suggestion\suggestion.wxml" />
+    <Content Include="ServiceLife\pages\suggestion\suggestion.wxss" />
+    <Content Include="ServiceLife\pages\weather\weather.json" />
+    <Content Include="ServiceLife\pages\weather\weather.wxml" />
+    <Content Include="ServiceLife\pages\weather\weather.wxss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -450,6 +474,8 @@
     <Folder Include="News\images\" />
     <Folder Include="News\views\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="ServiceLife\.vscode\" />
+    <Folder Include="ServiceLife\typings\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

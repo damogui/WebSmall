@@ -1,0 +1,38 @@
+{
+    "pages": [
+        "pages/search/search",
+        "pages/suggestion/suggestion",
+        "pages/regeocoding/regeocoding",
+        "pages/weather/weather"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#121212",
+        "navigationBarTitleText": "BMapWX",
+        "navigationBarTextStyle": "#fff",
+        "backgroundColor": "#ddd"
+    },
+    "tabBar": {
+        "color": "#000",
+        "selectedColor": "#4db900",
+        "backgroundColor": "#fbfbfd",
+        "position": "bottom",
+        "list": [{
+                "pagePath": "pages/search/search",
+                "text": "搜索"
+            },
+            {
+                "pagePath": "pages/suggestion/suggestion",
+                "text": "建议"
+            },
+            {
+                "pagePath": "pages/regeocoding/regeocoding",
+                "text": "定位"
+            },
+            {
+                "pagePath": "pages/weather/weather",
+                "text": "天气"
+            }
+        ]
+    }
+}
