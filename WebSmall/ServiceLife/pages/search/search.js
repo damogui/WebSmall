@@ -1,7 +1,67 @@
 var bmap = require('../../libs/bmap-wx.min.js');
 var wxMarkerData = [];
 var queryStr = "公园";
+var API_URL = "https://www.our666.com/Home/InsertUser";
+//回去用户信息
+function Login(code, encryptedData, iv) {
+
+    //console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
+    //创建一个dialog
+    wx.showToast({
+        title: '正在登录...',
+        icon: 'loading',
+        duration: 10000
+    });
+    //请求服务器
+    wx.request({
+        url: API_URL,
+        data: {
+            code: code,
+            encryptedData: encryptedData,
+            iv: iv,
+            type: 3
+        },
+        method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        header: {
+            'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function(res) {
+
+            //console.log("成功" + res+res.data);
+            // success
+            wx.hideToast();
+            // console.log('服务器返回' + res.data);
+
+        },
+        fail: function() {
+
+            console.log("失败");
+            // fail
+            // wx.hideToast();
+        },
+        complete: function() {
+            // complete
+        }
+    })
+}
+
 Page({
+    onShareAppMessage: function(res) {
+        if (res.from === 'button') {
+            // 来自页面内转发按钮
+            console.log(res.target)
+        }
+        return {
+            title: '位置帮手',
+            path: 'pages/search/search',
+            success: function(res) {
+                // 转发成功
+            },
+            fail: function(res) {
+                // 转发失败
+            }
+        }
+    },
     data: {
         markers: [],
         latitude: '',
@@ -24,7 +84,28 @@ Page({
         that.changeMarkerColor(wxMarkerData, id);
     },
     onLoad: function() {
+        wx.login({ //login流程
+            success: function(res) { //登录成功
+                if (res.code) {
+                    var code = res.code;
+                    wx.getUserInfo({
+                        //getUserInfo流程
+                        success: function(res2) { //获取userinfo成功
+                            //console.log(res2);
+                            var encryptedData = encodeURIComponent(res2.encryptedData); //一定要把加密串转成URI编码
+                            var iv = res2.iv;
+                            //请求自己的服务器
 
+                            // console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
+                            Login(code, encryptedData, iv);
+                        }
+                    });
+
+                } else {
+                    console.log('获取用户登录态失败！' + res.errMsg);
+                }
+            }
+        });
         // if (txt.toString.length == 0 || txt == null) {
         //     txt = "公园";
         // }

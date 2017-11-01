@@ -6,7 +6,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#121212",
-        "navigationBarTitleText": "位置服务",
+        "navigationBarTitleText": "位置帮手",
         "navigationBarTextStyle": "#fff",
         "backgroundColor": "#ddd",
         "font-size": "600px"
@@ -17,11 +17,13 @@
         "backgroundColor": "#fbfbfd",
         "position": "bottom",
 
+
         "list": [{
                 "pagePath": "pages/search/search",
                 "text": "搜索",
                 "iconPath": "img/ico-home.png",
                 "selectedIconPath": "img/ico-home-d.png"
+
 
             },
 
