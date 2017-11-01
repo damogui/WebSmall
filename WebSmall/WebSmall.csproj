@@ -111,6 +111,20 @@
     <Content Include="Fanyi\utils\md5.js" />
     <Content Include="Fanyi\views\index\index.js" />
     <Content Include="Fanyi\views\lishi\lishi.js" />
+    <Content Include="Joke\app.js" />
+    <Content Include="Joke\image\ic_about_blue.png" />
+    <Content Include="Joke\image\ic_about_gray.png" />
+    <Content Include="Joke\image\ic_gif_blue.png" />
+    <Content Include="Joke\image\ic_gif_gray.png" />
+    <Content Include="Joke\image\ic_joke_blue.png" />
+    <Content Include="Joke\image\ic_joke_gray.png" />
+    <Content Include="Joke\image\loading.gif" />
+    <Content Include="Joke\pages\about\about.js" />
+    <Content Include="Joke\pages\joke\joke.js" />
+    <Content Include="Joke\pages\picture\picture.js" />
+    <Content Include="Joke\screenshot\joke.png" />
+    <Content Include="Joke\screenshot\picture.png" />
+    <Content Include="Joke\utils\util.js" />
     <Content Include="MapNav\.gitignore" />
     <Content Include="MapNav\app.js" />
     <Content Include="MapNav\image\arrowright.png" />
@@ -379,6 +393,19 @@
     <Content Include="MapNav\pages\map\map.json" />
     <Content Include="MapNav\pages\map\map.wxml" />
     <Content Include="MapNav\pages\map\map.wxss" />
+    <Content Include="Joke\app.json" />
+    <Content Include="Joke\app.wxss" />
+    <Content Include="Joke\README.md" />
+    <Content Include="Joke\pages\about\about.json" />
+    <Content Include="Joke\pages\about\about.wxml" />
+    <Content Include="Joke\pages\about\about.wxss" />
+    <Content Include="Joke\pages\common\common.wxml" />
+    <Content Include="Joke\pages\joke\joke.json" />
+    <Content Include="Joke\pages\joke\joke.wxml" />
+    <Content Include="Joke\pages\joke\joke.wxss" />
+    <Content Include="Joke\pages\picture\picture.json" />
+    <Content Include="Joke\pages\picture\picture.wxml" />
+    <Content Include="Joke\pages\picture\picture.wxss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
