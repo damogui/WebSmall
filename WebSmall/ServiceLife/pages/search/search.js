@@ -46,6 +46,28 @@ function Login(code, encryptedData, iv) {
 }
 
 Page({
+    controltap: function(e) {
+        console.log(e.controlId);
+    },
+    calling: function(e) {
+
+        var phone = e.currentTarget.dataset.num;
+        phone = phone.replace('电话：', '').split(',')[0];
+        if (phone == "undefined") {
+            return;
+
+        }
+        wx.makePhoneCall({
+            phoneNumber: phone, //此号码并非真实电话号码，仅用于测试
+            success: function() {
+                console.log("拨打电话成功！")
+            },
+            fail: function() {
+                console.log("拨打电话失败！")
+            }
+        })
+
+    },
     onShareAppMessage: function(res) {
         if (res.from === 'button') {
             // 来自页面内转发按钮
@@ -83,7 +105,7 @@ Page({
         that.showSearchInfo(wxMarkerData, id);
         that.changeMarkerColor(wxMarkerData, id);
     },
-    onLoad: function() {
+    onLoad: function(obj) {
         wx.login({ //login流程
             success: function(res) { //登录成功
                 if (res.code) {
@@ -97,7 +119,14 @@ Page({
                             //请求自己的服务器
 
                             // console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
-                            Login(code, encryptedData, iv);
+
+                            if (obj != 1) {
+
+                                Login(code, encryptedData, iv);
+
+                            }
+
+
                         }
                     });
 
@@ -182,7 +211,7 @@ Page({
         // var sign = md5.MD5(str);
 
         queryStr = text;
-        this.onLoad();
+        this.onLoad(1);
     },
     bindTextAreaBlur(res) {
 

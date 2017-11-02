@@ -1,5 +1,6 @@
 var bmap = require('../../libs/bmap-wx.min.js');
 Page({
+
     onShareAppMessage: function(res) {
         if (res.from === 'button') {
             // 来自页面内转发按钮

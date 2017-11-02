@@ -1,15 +1,15 @@
 <view class="container">
-    <image src="http://o7iblkvul.bkt.clouddn.com/cover.png" ></image>
-    <text class="about">I am an Android developer,but also interested in other technology. </text>
+    <image src="https://www.our666.com/Static/our666/images/logo.png"></image>
+    <text class="about">My name is Jack, if you like our small program, you can contact us. </text>
 
     <view class="website">
         <view class="item">
-            <text >GitHub:</text>
-            <text class="github">https://github.com/zhijieeeeee </text>
+            <text>地址:</text>
+            <text class="github">https://www.our666.com </text>
         </view>
         <view class="item">
-            <text >CSDN:</text>
-            <text class="github">http://blog.csdn.net/u013155862</text>
+            <text>邮箱:</text>
+            <text class="github">1342743270@qq.com</text>
         </view>
     </view>
 </view>

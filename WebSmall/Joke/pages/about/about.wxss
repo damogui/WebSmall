@@ -1,34 +1,33 @@
-.container{
-    padding:10px;
+.container {
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container image{
+.container image {
     margin-top: 40px;
     width: 150px;
     height: 150px;
 }
 
-.container .about{
+.container .about {
     margin: 10px;
-    word-break:break-all;
+    word-break: break-all;
 }
 
-.container .website{
+.container .website {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
 }
 
-.container .website .item{
+.container .website .item {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
 }
 
-.github{
+.github {
     color: #268dcd;
-    font-size: 20px;
 }

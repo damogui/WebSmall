@@ -11,9 +11,9 @@
 <view class="place_info">
     <text>{{placeData.title}}</text>
     <text>{{placeData.address}}</text>
-    <text>{{placeData.telephone}}</text>
+    <text bindtap="calling" data-num="{{placeData.telephone}}">{{placeData.telephone}}</text>
 </view>
 
 <view class="map_container">
-    <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
+    <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap" bindcontroltap="controltap"></map>
 </view>
