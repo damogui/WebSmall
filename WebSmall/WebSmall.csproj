@@ -330,6 +330,12 @@
     <Content Include="Fanyi\views\lishi\lishi.wxml" />
     <Content Include="Fanyi\views\lishi\lishi.wxss" />
     <Content Include="ServiceLife\app.js" />
+    <Content Include="ServiceLife\img\fanyi.png" />
+    <Content Include="ServiceLife\img\fanyi_selected.png" />
+    <Content Include="ServiceLife\img\ico-home-d.png" />
+    <Content Include="ServiceLife\img\ico-home.png" />
+    <Content Include="ServiceLife\img\ico-w-d.png" />
+    <Content Include="ServiceLife\img\ico-w.png" />
     <Content Include="ServiceLife\img\marker_red.png" />
     <Content Include="ServiceLife\img\marker_yellow.png" />
     <Content Include="ServiceLife\libs\bmap-wx.min.js" />
