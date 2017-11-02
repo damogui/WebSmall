@@ -148,6 +148,11 @@ Page({
         var success = function(data) {
 
             wxMarkerData = data.wxMarkerData;
+            if (wxMarkerData.length == 0) {
+                return;
+
+
+            }
             that.setData({
                 markers: wxMarkerData
             });
