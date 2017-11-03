@@ -125,6 +125,10 @@
     <Content Include="Joke\screenshot\joke.png" />
     <Content Include="Joke\screenshot\picture.png" />
     <Content Include="Joke\utils\util.js" />
+    <Content Include="Map2\app.js" />
+    <Content Include="Map2\pages\index\index.js" />
+    <Content Include="Map2\pages\logs\logs.js" />
+    <Content Include="Map2\utils\util.js" />
     <Content Include="MapNav\.gitignore" />
     <Content Include="MapNav\app.js" />
     <Content Include="MapNav\image\arrowright.png" />
@@ -412,6 +416,15 @@
     <Content Include="Joke\pages\picture\picture.json" />
     <Content Include="Joke\pages\picture\picture.wxml" />
     <Content Include="Joke\pages\picture\picture.wxss" />
+    <Content Include="Map2\app.json" />
+    <Content Include="Map2\app.wxss" />
+    <Content Include="Map2\project.config.json" />
+    <Content Include="Map2\pages\index\index.json" />
+    <Content Include="Map2\pages\index\index.wxml" />
+    <Content Include="Map2\pages\index\index.wxss" />
+    <Content Include="Map2\pages\logs\logs.json" />
+    <Content Include="Map2\pages\logs\logs.wxml" />
+    <Content Include="Map2\pages\logs\logs.wxss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

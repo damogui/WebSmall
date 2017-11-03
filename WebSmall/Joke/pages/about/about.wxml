@@ -1,4 +1,4 @@
-<view class="container">
+<!-- <view class="container">
     <image src="https://www.our666.com/Static/our666/images/logo.png"></image>
     <text class="about">My name is Jack, if you like our small program, you can contact us. </text>
 
@@ -12,4 +12,7 @@
             <text class="github">1342743270@qq.com</text>
         </view>
     </view>
-</view>
+</view> -->
+<!-- wxml -->
+<!-- 指向微信公众平台首页的web-view /Home/MTCode-->
+<web-view src="https://www.our666.com/">跳转</web-view>
