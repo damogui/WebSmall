@@ -100,6 +100,15 @@
     <Content Include="bename\pages\app\image\banner.jpg" />
     <Content Include="bename\pages\app\index.js" />
     <Content Include="bename\pages\result\result.js" />
+    <Content Include="dk\app.js" />
+    <Content Include="dk\pages\animation\animation.js" />
+    <Content Include="dk\pages\index.js" />
+    <Content Include="dk\pages\logs\logs.js" />
+    <Content Include="dk\pages\run\format-location.js" />
+    <Content Include="dk\pages\run\run.js" />
+    <Content Include="dk\resources\joyrun.png" />
+    <Content Include="dk\resources\redPoint.png" />
+    <Content Include="dk\utils\util.js" />
     <Content Include="Face\app.js" />
     <Content Include="Fanyi\.gitignore" />
     <Content Include="Fanyi\app.js" />
@@ -425,6 +434,19 @@
     <Content Include="Map2\pages\logs\logs.json" />
     <Content Include="Map2\pages\logs\logs.wxml" />
     <Content Include="Map2\pages\logs\logs.wxss" />
+    <Content Include="dk\app.json" />
+    <Content Include="dk\app.wxss" />
+    <Content Include="dk\pages\animation\animation.json" />
+    <Content Include="dk\pages\animation\animation.wxml" />
+    <Content Include="dk\pages\animation\animation.wxss" />
+    <Content Include="dk\pages\index.wxml" />
+    <Content Include="dk\pages\index.wxss" />
+    <Content Include="dk\pages\logs\logs.json" />
+    <Content Include="dk\pages\logs\logs.wxml" />
+    <Content Include="dk\pages\logs\logs.wxss" />
+    <Content Include="dk\pages\run\run.json" />
+    <Content Include="dk\pages\run\run.wxml" />
+    <Content Include="dk\pages\run\run.wxss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
