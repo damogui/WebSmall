@@ -174,11 +174,17 @@ Page({
     },
     showSearchInfo: function(data, i) {
         var that = this;
+
+        var phone = "phone";
+        if (data[i].telephone == undefined) {
+            phone = "";
+        }
         that.setData({
             placeData: {
                 title: '名称：' + data[i].title + '\n',
                 address: '地址：' + data[i].address + '\n',
-                telephone: '电话：' + data[i].telephone
+                telephone: '电话：' + data[i].telephone,
+                phone: phone
             }
         });
     },
