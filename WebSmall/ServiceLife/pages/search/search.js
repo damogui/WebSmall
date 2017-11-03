@@ -176,6 +176,11 @@ Page({
         var that = this;
 
         var phone = "phone";
+        if (data[i] == null || data[i] == undefined) {
+
+            return;
+
+        }
         if (data[i].telephone == undefined) {
             phone = "";
         }
