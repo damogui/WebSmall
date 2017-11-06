@@ -326,6 +326,20 @@
     <Content Include=".wing\settings.json" />
     <Content Include=".wing\tasks.json" />
     <Content Include="jsconfig.json" />
+    <Content Include="ParentsHelp\app.js" />
+    <Content Include="ParentsHelp\image\ic_about_blue.png" />
+    <Content Include="ParentsHelp\image\ic_about_gray.png" />
+    <Content Include="ParentsHelp\image\ic_gif_blue.png" />
+    <Content Include="ParentsHelp\image\ic_gif_gray.png" />
+    <Content Include="ParentsHelp\image\ic_joke_blue.png" />
+    <Content Include="ParentsHelp\image\ic_joke_gray.png" />
+    <Content Include="ParentsHelp\image\loading.gif" />
+    <Content Include="ParentsHelp\pages\about\about.js" />
+    <Content Include="ParentsHelp\pages\joke\joke.js" />
+    <Content Include="ParentsHelp\pages\picture\picture.js" />
+    <Content Include="ParentsHelp\screenshot\joke.png" />
+    <Content Include="ParentsHelp\screenshot\picture.png" />
+    <Content Include="ParentsHelp\utils\util.js" />
     <Content Include="README.md" />
     <Content Include="bename\app.json" />
     <Content Include="bename\app.wxss" />
@@ -447,6 +461,21 @@
     <Content Include="dk\pages\run\run.json" />
     <Content Include="dk\pages\run\run.wxml" />
     <Content Include="dk\pages\run\run.wxss" />
+    <Content Include="ParentsHelp\app.json" />
+    <Content Include="ParentsHelp\app.wxss" />
+    <Content Include="ParentsHelp\jsconfig.json" />
+    <Content Include="ParentsHelp\project.config.json" />
+    <Content Include="ParentsHelp\README.md" />
+    <Content Include="ParentsHelp\pages\about\about.json" />
+    <Content Include="ParentsHelp\pages\about\about.wxml" />
+    <Content Include="ParentsHelp\pages\about\about.wxss" />
+    <Content Include="ParentsHelp\pages\common\common.wxml" />
+    <Content Include="ParentsHelp\pages\joke\joke.json" />
+    <Content Include="ParentsHelp\pages\joke\joke.wxml" />
+    <Content Include="ParentsHelp\pages\joke\joke.wxss" />
+    <Content Include="ParentsHelp\pages\picture\picture.json" />
+    <Content Include="ParentsHelp\pages\picture\picture.wxml" />
+    <Content Include="ParentsHelp\pages\picture\picture.wxss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -580,6 +609,7 @@
     <Compile Include="WechatSend\WXBizMsgCrypt.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="ParentsHelp\typings\wx.d.ts" />
     <TypeScriptCompile Include="typings\weapp.d.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -591,6 +621,7 @@
     <Folder Include="News\images\" />
     <Folder Include="News\views\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="ParentsHelp\.vscode\" />
     <Folder Include="ServiceLife\.vscode\" />
     <Folder Include="ServiceLife\typings\" />
   </ItemGroup>
