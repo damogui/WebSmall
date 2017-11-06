@@ -33,14 +33,14 @@ Page({
     btn_click() {
         
                 let text = this.data.textarea_text;
-                if (text == '' || text == null) {
-                    wx.showToast({
-                        title: '请输入要搜索的内容', //提示的内容
-                        icon: 'success', //图标，只支持"success"、"loading"
-                        duration: 2000, //提示的延迟时间，单位毫秒，默认：1500, 最大为10000
-                    })
-                    return;
-                }
+                // if (text == '' || text == null) {
+                //     wx.showToast({
+                //         title: '请输入要搜索的内容', //提示的内容
+                //         icon: 'success', //图标，只支持"success"、"loading"
+                //         duration: 2000, //提示的延迟时间，单位毫秒，默认：1500, 最大为10000
+                //     })
+                //     return;
+                // }
                 // const that = this;
                 // var salt = (new Date).getTime();
                 // var appid = api.BAIDU_FANYI_APPID
