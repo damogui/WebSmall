@@ -1,13 +1,13 @@
 {
     "pages": [
         "pages/joke/joke",
-        "pages/picture/picture",
+     
         "pages/about/about"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#268dcd",
-        "navigationBarTitleText": "开心一刻",
+        "navigationBarTitleText": "家长帮手",
         "navigationBarTextStyle": "white",
         "enablePullDownRefresh": true
     },
@@ -18,16 +18,11 @@
         "backgroundColor": "#ffffff",
         "list": [{
                 "pagePath": "pages/joke/joke",
-                "text": "笑话",
+                "text": "搜索",
                 "iconPath": "image/ic_joke_gray.png",
                 "selectedIconPath": "image/ic_joke_blue.png"
             },
-            {
-                "pagePath": "pages/picture/picture",
-                "text": "趣图",
-                "iconPath": "image/ic_gif_gray.png",
-                "selectedIconPath": "image/ic_gif_blue.png"
-            },
+      
             {
                 "pagePath": "pages/about/about",
                 "text": "关于我们",

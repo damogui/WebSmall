@@ -40,6 +40,7 @@ page {
     color: black;
 }
 
+
 .item-view .date {
     color: grey;
     margin-top: 10px;

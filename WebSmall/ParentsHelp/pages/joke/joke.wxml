@@ -1,5 +1,13 @@
 <import src="../common/common.wxml"/>
-
+<view class='textarea_view has-success well row'>
+    
+        <input bindinput="textarea_bindinput" class="form-control col-5" bindblur="bindTextAreaBlur" placeholder="{{textarea_placeholder}}" value="{{textarea_text}}" bindfocus="bindTextAreaFocus" bindconfirm="btn_click" />
+        <view class="row">
+            <button size="mini" type="primary" bindtap="btn_click" class="col-9 bg-primary">
+            <text class='text-primary'>{{btn_text}}</text>
+       </button>
+        </view>
+    </view>
 <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore" lower-threshold="100">
     <template is="jokeItem" data="{{item}}" wx:for="{{jokeList}}"/>
     <template is="loadindFooter" data="{{hideFooter}}"/>
