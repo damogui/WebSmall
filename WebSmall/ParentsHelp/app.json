@@ -1,28 +1,28 @@
 {
     "pages": [
-        "pages/joke/joke",
-     
+        "pages/search/search",
+
         "pages/about/about"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#268dcd",
+        "navigationBarBackgroundColor": "#1AAD19",
         "navigationBarTitleText": "家长帮手",
         "navigationBarTextStyle": "white",
         "enablePullDownRefresh": true
     },
     "tabBar": {
         "color": "#000000",
-        "selectedColor": "#268dcd",
+        "selectedColor": "#1AAD19",
         "borderStyle": "white",
         "backgroundColor": "#ffffff",
         "list": [{
-                "pagePath": "pages/joke/joke",
+                "pagePath": "pages/search/search",
                 "text": "搜索",
                 "iconPath": "image/ic_joke_gray.png",
                 "selectedIconPath": "image/ic_joke_blue.png"
             },
-      
+
             {
                 "pagePath": "pages/about/about",
                 "text": "关于我们",
