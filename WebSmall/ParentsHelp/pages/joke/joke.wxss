@@ -29,6 +29,15 @@
 
 /* 自己定义 */
 
+.textarea_view {
+    /* position: fixed; */
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 999;
+    /* width: 100%; */
+}
+
 .phone {
     background-color: #2B9AE8;
     position: relative;
@@ -812,7 +821,5 @@ image {
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none;
-    opacity: .65;
-
 
 }
