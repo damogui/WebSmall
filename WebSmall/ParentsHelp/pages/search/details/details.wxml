@@ -1,0 +1,13 @@
+<view class="item-view">
+    <image src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=e66e4078bb1c8701d6b6b5e01f44f912/e1fe9925bc315c60fcb5957385b1cb134954770e.jpg" />
+</view>
+
+<view class="place_info location">
+
+    <text>名称：</text> <text>{{placeData.OrgName}}\n</text>
+    <text>地址：</text> <text>{{placeData.Address}}\n</text>
+    <!-- <text>电话：</text> -->
+    <text class="callphone" bindtap="calling" data-num="{{placeData.LinkTel}}">电话：{{placeData.LinkTel}}\n  \n </text>
+
+    <text>机构介绍：</text> <text>{{placeData.Content}}\n</text>
+</view>

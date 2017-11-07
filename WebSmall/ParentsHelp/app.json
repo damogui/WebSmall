@@ -1,7 +1,8 @@
 {
     "pages": [
         "pages/search/search",
-
+        "pages/picture/picture",
+        "pages/search/details/details",
         "pages/about/about"
     ],
     "window": {
