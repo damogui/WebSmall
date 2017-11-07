@@ -1,9 +1,132 @@
 var http = require('../../../utils/util');
 var app = getApp();
 var url = 'https://www.our666.com/Data/GetOrgDetailById';
-var queryStr = "";
+// var queryStr = "";
 var phone = "phone";
+var API_URL = "https://www.our666.com/Home/InsertUserNew"; //插入用户信息
+var API_URL2 = "https://www.our666.com/Data/PushUserForm"; //进行推送
+var orgId = 0;
+
+function Login(code, encryptedData, iv) {
+
+    //console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
+    //创建一个dialog
+    //wx.showToast({
+    //    title: '正在登录...',
+    //    icon: 'loading',
+    //    duration: 10000
+    //});
+    //请求服务器
+    wx.request({
+        url: API_URL,
+        data: {
+            code: code,
+            encryptedData: encryptedData,
+            iv: iv
+        },
+        method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        header: {
+            'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function(res) {
+            console.log("成功" + res.data.split('openId:')[1]);
+
+            wx.setStorage({
+                key: "openid",
+                data: res.data.split('openId:')[1]
+            });
+            // success
+            wx.hideToast();
+
+            return res.data.split('openId:')[1];
+            // console.log('服务器返回' + res.data);
+
+        },
+        fail: function() {
+            console.log("失败");
+            // fail
+            // wx.hideToast();
+        },
+        complete: function() {
+            // complete
+        }
+    })
+}
+var that = this;
+///插入数据
+function PushUserForm(openId, formId) {
+    wx.showToast({
+        title: '推送成功',
+        icon: 'success',
+        duration: 2000
+    });
+
+    //请求服务器
+    wx.request({
+        url: API_URL2,
+        data: {
+            openId: openId,
+            formId: formId,
+            data: orgId //机构id
+
+        },
+        method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        header: {
+            'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function(res) {
+
+
+        },
+        fail: function() {
+            console.log("失败");
+            // fail
+            // wx.hideToast();
+        },
+        complete: function() {
+            // complete
+        }
+    })
+}
+
+
 Page({
+    formSubmit: function(e) { //进行插入表单id
+
+        var pushFlag = e.currentTarget.dataset.num;
+
+        if (pushFlag == "1") {
+            wx.showToast({
+                title: '已经推送一条',
+                icon: 'fail',
+                duration: 2000
+            })
+
+            return;
+
+        }
+
+        var that = this;
+        wx.getStorage({
+            key: "openid",
+            success(res) {
+
+                console.log(res.data);
+                if (res.data != null) {
+
+                    that.setData({
+                        isPush: 1
+                    });
+
+                    PushUserForm(res.data, e.detail.formId);
+
+                }
+
+
+            }
+        })
+        console.log('form发生了submit事件，fromId为：', e.detail.formId)
+    },
     onShareAppMessage: function(res) {
         if (res.from === 'button') {
             // 来自页面内转发按钮
@@ -22,23 +145,9 @@ Page({
     },
     data: {
         placeData: {},
-        orgId: 0
+        orgId: 0,
+        isPush: 0
     },
-    // btn_click() {
-
-    //     let text = this.data.textarea_text;
-
-    //     queryStr = "";
-    //     this.data.jokeList = [];
-    //     this.onLoad(1);
-    // },
-    // bindTextAreaBlur(res) {
-
-    //     this.setData({
-    //         textarea_text: res.detail.value,
-    //         fanyi_src: '../../img/fanyi.png'
-    //     })
-    // },
     textarea_bindinput(res) {
 
         this.setData({
@@ -48,6 +157,31 @@ Page({
     },
     onLoad: function(options) {
         this.data.orgId = options.orgId; //机构id
+        orgId = options.orgId;
+        wx.login({ //login流程
+            success: function(res) { //登录成功
+                if (res.code) {
+                    var code = res.code;
+                    wx.getUserInfo({
+                        //getUserInfo流程
+                        success: function(res2) { //获取userinfo成功
+                            //console.log(res2);
+                            var encryptedData = encodeURIComponent(res2.encryptedData); //一定要把加密串转成URI编码
+                            var iv = res2.iv;
+                            //请求自己的服务器
+
+                            // console.log("?code=" + code + "&encryptedData=" + encryptedData + "&iv=" + iv);
+                            var openid = Login(code, encryptedData, iv);
+
+
+                        }
+                    });
+
+                } else {
+                    console.log('获取用户登录态失败！' + res.errMsg);
+                }
+            }
+        });
 
 
         // 页面初始化 options为页面跳转所带来的参数
@@ -68,13 +202,6 @@ Page({
             }, // 设置请求的 header
             success: function(res) {
 
-                // that.setData({
-                //     jokeList: that.data.jokeList.concat(res.data.Data),
-                //     loadingHide: true,
-                //     TotalPage: parseInt((res.data.TotalCount / 10)) + 1
-
-
-                // })
                 if (res.data.Data.LinkTel == undefined) {
                     phone = "";
                 }
@@ -85,7 +212,8 @@ Page({
                         Address: res.data.Data.Address,
                         LinkTel: res.data.Data.LinkTel,
                         phone: phone,
-                        Content: res.data.Data.Content
+                        Content: res.data.Data.Content,
+                        ImgUrl: res.data.Data.ImgUrl
                     }
                 });
 
