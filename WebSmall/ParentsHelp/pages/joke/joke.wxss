@@ -74,7 +74,13 @@
 }
 
 .text-primary {
-    color: #337ab7;
+    /* color: #337ab7; */
+    text-align: center;
+    line-height: 65rpx;
+    /* width: 100%; */
+    align-items: center;
+    /*垂直居中*/
+    justify-content: center;
 }
 
 .has-success .form-control {
@@ -236,6 +242,7 @@ samp {
 
 .row {
     display: flex;
+    text-align: center;
 }
 
 .col-1 {
@@ -806,4 +813,6 @@ image {
     -webkit-box-shadow: none;
     box-shadow: none;
     opacity: .65;
+
+
 }
