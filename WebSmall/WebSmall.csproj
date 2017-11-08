@@ -335,8 +335,9 @@
     <Content Include="ParentsHelp\image\ic_joke_gray.png" />
     <Content Include="ParentsHelp\image\loading.gif" />
     <Content Include="ParentsHelp\pages\about\about.js" />
-    <Content Include="ParentsHelp\pages\joke\joke.js" />
     <Content Include="ParentsHelp\pages\picture\picture.js" />
+    <Content Include="ParentsHelp\pages\search\details\details.js" />
+    <Content Include="ParentsHelp\pages\search\search.js" />
     <Content Include="ParentsHelp\screenshot\joke.png" />
     <Content Include="ParentsHelp\screenshot\picture.png" />
     <Content Include="ParentsHelp\utils\util.js" />
@@ -470,12 +471,15 @@
     <Content Include="ParentsHelp\pages\about\about.wxml" />
     <Content Include="ParentsHelp\pages\about\about.wxss" />
     <Content Include="ParentsHelp\pages\common\common.wxml" />
-    <Content Include="ParentsHelp\pages\joke\joke.json" />
-    <Content Include="ParentsHelp\pages\joke\joke.wxml" />
-    <Content Include="ParentsHelp\pages\joke\joke.wxss" />
     <Content Include="ParentsHelp\pages\picture\picture.json" />
     <Content Include="ParentsHelp\pages\picture\picture.wxml" />
     <Content Include="ParentsHelp\pages\picture\picture.wxss" />
+    <Content Include="ParentsHelp\pages\search\details\details.json" />
+    <Content Include="ParentsHelp\pages\search\details\details.wxml" />
+    <Content Include="ParentsHelp\pages\search\details\details.wxss" />
+    <Content Include="ParentsHelp\pages\search\search.json" />
+    <Content Include="ParentsHelp\pages\search\search.wxml" />
+    <Content Include="ParentsHelp\pages\search\search.wxss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
