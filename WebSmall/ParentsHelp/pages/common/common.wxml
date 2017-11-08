@@ -1,7 +1,7 @@
 <!--joke列表项-->
 <template name="jokeItem">
        
-    <view class="item-view" >
+    <view class="item-view {{hide}}" >
         <image src="{{item.ImgUrl}}"  hspace="20"  /> 
         <text class="content" >　　{{item.Content}}</text>
         <text class="date">{{item.UpdateTime}}</text>

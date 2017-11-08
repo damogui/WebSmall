@@ -29,6 +29,7 @@ Page({
         textarea_placeholder: "请输入要搜索的内容",
         btn_text: "搜索",
         textarea_text: "",
+        hide: "" //控制标签显示不显示
     },
     btn_click() {
 
@@ -49,7 +50,9 @@ Page({
 
         queryStr = encodeURI(text);
         this.data.jokeList = [];
-        this.onLoad(1);
+
+        this.data.page = 1;
+        this.onLoad();
     },
     bindTextAreaBlur(res) {
 
@@ -85,13 +88,28 @@ Page({
             }, // 设置请求的 header
             success: function(res) {
 
+
+                var isHide = "";
+
+                if (res.data.TotalCount == 0) {
+                    isHide = "hide";
+
+
+                } else {
+                    isHide = "";
+
+
+                }
+
                 that.setData({
                     jokeList: that.data.jokeList.concat(res.data.Data),
                     loadingHide: true,
-                    TotalPage: parseInt((res.data.TotalCount / 10)) + 1
+                    TotalPage: parseInt((res.data.TotalCount / 10)) + 1,
+                    hide: isHide
 
 
-                })
+                }); //需要冲洗进行下设置
+
 
 
                 wx.hideToast();
