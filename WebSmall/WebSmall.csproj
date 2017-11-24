@@ -96,6 +96,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="baidudt\demo\app.js" />
+    <Content Include="baidudt\demo\img\marker_red.png" />
+    <Content Include="baidudt\demo\img\marker_yellow.png" />
+    <Content Include="baidudt\demo\libs\bmap-wx.min.js" />
+    <Content Include="baidudt\demo\pages\regeocoding\regeocoding.js" />
+    <Content Include="baidudt\demo\pages\search\search.js" />
+    <Content Include="baidudt\demo\pages\suggestion\suggestion.js" />
+    <Content Include="baidudt\demo\pages\weather\weather.js" />
+    <Content Include="baidudt\src\bmap-wx.js" />
+    <Content Include="baidudt\src\bmap-wx.min.js" />
     <Content Include="bename\app.js" />
     <Content Include="bename\pages\app\image\banner.jpg" />
     <Content Include="bename\pages\app\index.js" />
@@ -480,6 +490,26 @@
     <Content Include="ParentsHelp\pages\search\search.json" />
     <Content Include="ParentsHelp\pages\search\search.wxml" />
     <Content Include="ParentsHelp\pages\search\search.wxss" />
+    <Content Include="baidudt\.DS_Store" />
+    <Content Include="baidudt\demo\.DS_Store" />
+    <Content Include="baidudt\demo\app.json" />
+    <Content Include="baidudt\demo\app.wxss" />
+    <Content Include="baidudt\demo\libs\.DS_Store" />
+    <Content Include="baidudt\demo\pages\.DS_Store" />
+    <Content Include="baidudt\demo\pages\regeocoding\regeocoding.json" />
+    <Content Include="baidudt\demo\pages\regeocoding\regeocoding.wxml" />
+    <Content Include="baidudt\demo\pages\regeocoding\regeocoding.wxss" />
+    <Content Include="baidudt\demo\pages\search\search.json" />
+    <Content Include="baidudt\demo\pages\search\search.wxml" />
+    <Content Include="baidudt\demo\pages\search\search.wxss" />
+    <Content Include="baidudt\demo\pages\suggestion\suggestion.json" />
+    <Content Include="baidudt\demo\pages\suggestion\suggestion.wxml" />
+    <Content Include="baidudt\demo\pages\suggestion\suggestion.wxss" />
+    <Content Include="baidudt\demo\pages\weather\weather.json" />
+    <Content Include="baidudt\demo\pages\weather\weather.wxml" />
+    <Content Include="baidudt\demo\pages\weather\weather.wxss" />
+    <Content Include="baidudt\README.md" />
+    <Content Include="baidudt\src\.DS_Store" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
