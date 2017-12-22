@@ -1,0 +1,50 @@
+<!--pages/hospital/hospital.wxml-->
+<import src="../../third/toast.wxml" />
+<!-- is="toast" 匹配组件中的toast提示  如果用dialog的话这就是dialog -->
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<view class="container">
+   <view class="search_view">
+     <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="请输入医院名称" value="{{inputValue}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchAction"/>
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+   </view>
+   <view class="result_view">
+        <scroll-view scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadmore" class="scroll_view" style="height:{{scrollHeight}}rpx">
+            <block wx:for="{{hospitalList}}">
+                <view class="hos_cell" bindtap="tapAction" data-id="{{item.id}}">
+                    <view class="hos_desc">
+                        <view class="hos_title"><text> {{item.hosName}}</text></view>
+                        <view class="hos_content">
+                            <view class="left"><text>主治：</text></view>
+                            <view class="content"><text> {{item.zzjb}} </text></view>
+                        </view>
+                        <view class="hos_address">
+                            <view class="left"><text>地址：</text></view>
+                            <view class="address"><text> {{item.addr}} </text></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view hidden="{{!showLoadMore}}" class="weui-loadmore">
+                <view class="weui-loading"/>
+                <view class="weui-loadmore__tips">正在加载...</view>
+            </view>
+            <view hidden="{{!showNoMore}}" class="weui-loadmore weui-loadmore_line">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"  />
+            </view>
+        </scroll-view>
+    </view>	
+</view>

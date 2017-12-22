@@ -1,0 +1,7 @@
+<!--pages/hospital/result.wxml-->
+<view class="container">
+	<view class="title"><text> {{ title }} </text></view>
+	<view class="info"><text> {{ info }} </text></view>
+    <view class="job"><text>{{job}}</text></view>
+	<view class="address"><text> {{ address }} </text></view>
+</view>

@@ -1,0 +1,20 @@
+/* pages/hospital/result.wxss */
+.title{
+    text-align: center;
+    margin-top: 32rpx;
+    font-size: 32rpx;
+}
+.info{
+    margin: 16rpx 32rpx;
+    font-size: 30rpx;
+}
+.address{
+    margin: 16rpx 32rpx;
+    font-size: 30rpx;
+    align-self: flex-start;
+
+}
+.job{
+    margin: 16rpx 32rpx;
+    font-size: 30rpx;
+}
