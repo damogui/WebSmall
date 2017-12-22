@@ -1,0 +1,64 @@
+/**index.wxss**/
+page{
+  height: 100%;
+  background: #f6f6f6;
+}
+.container {
+  justify-content:flex-start
+}
+.userinfo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 125px;
+  background: #333238;
+  width: 100%;
+}
+.userinfo .scan,.userinfo .kai{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.userinfo-avatar {
+  width: 110rpx;
+  height: 108rpx;
+  text-align: center;
+}
+.userinfo .kai .userinfo-avatar{
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 12px;
+}
+.copyright{
+  font-size: 15px;
+  color: #4a4a4a;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.copyright-avatar{
+  width:20px;
+  height:20px;
+  vertical-align:middle;
+  margin-right:0px;
+}
+.setinfo{
+  height:25px;
+  display:block;
+  width:100%;
+  background:#333238;
+}
+.setinfo image{
+  width:25px;
+  height:25px;
+  margin-left:15px;
+}

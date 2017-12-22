@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/addnew/addnew",
+    "pages/showres/index",
+    "pages/setinfo/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#333238",
+    "navigationBarTitleText": "发票助手",
+    "navigationBarTextStyle":"light"
+    
+  }
+}

@@ -1,0 +1,35 @@
+.tops{
+  background: #F0F0F0;
+  font-size: 14px;
+  padding: 10px 15px;
+  color: #A4A4A4;
+}
+canvas {
+  margin: 0 auto;
+}
+.nuim-cell{
+  background: #fff;
+  padding: 10px 15px 5px;
+}
+.nuim-form__item {
+  line-height: 26px;
+}
+.nuim-form__title {
+  float: left;
+  width: 220rpx;
+  font-size: 14px;
+  color: #747474;
+}
+.Taxinfo{
+  padding-top:5px;
+}
+.dist{
+  word-wrap:break-word ;
+  width: 460rpx;
+  font-size:16px;
+  display: inline-block;
+}
+.qrcode{
+  text-align: center;
+  padding-top:20px;
+}

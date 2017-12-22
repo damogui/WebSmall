@@ -1,0 +1,25 @@
+<import src="/components/toast/index.wxml" />
+<!--addnew.wxml-->
+<view class="addnew">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <input type='hidden' style='display:none;' disabled name='id' value='{{id}}' />
+    <view class="nuim-form">
+      <view class="nuim-cell nuim-form__item">
+        <text class="nuim-form__title">纳税人识别号</text>
+        <input class="nuim-form__input nuim-cell__bd" placeholder="必填"  name='code' value='{{code}}' placeholder-class="holds" maxlength='20'/>
+      </view>
+      <view class="nuim-cell nuim-form__item">
+        <text class="nuim-form__title">分机号</text>
+        <input class="nuim-form__input nuim-cell__bd" placeholder="必填" placeholder-class="holds" name='fenji' value='{{fenji}}' maxlength='10' />
+      </view>
+      <view class="nuim-cell nuim-form__item nuim-form__item__link" bindtap="selectType">
+        <text class="nuim-form__title">服务商</text>
+        <view wx:if="{{fws}}" class="nuim-form__action__value"> {{fws}} </view>
+        <view wx:else class="nuim-form__action__placeholder"> 请选择 </view>
+      </view>
+    </view>
+    <input type="text" name="fws" value='{{fws}}' class="hideinput"/>
+    <button class="btn"  formType="submit">确认</button>
+  </form>
+</view>
+<template is="toast" data="{{ Toast }}"></template>

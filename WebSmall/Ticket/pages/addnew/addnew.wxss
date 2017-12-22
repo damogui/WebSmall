@@ -1,0 +1,43 @@
+/**addnew.wxss**/
+page{
+  height: 100%;
+  background: #f6f6f6;
+    width: 100%;
+}
+.nuim-form{
+  padding-top:10px; 
+  position: relative
+}
+.nuim-cell{
+  background: #fff;
+  padding: 10px 15px;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.nuim-form__item {
+  line-height: 26px;
+}
+
+.nuim-form__title {
+  float: left;
+  width: 100px;
+  font-size: 14px;
+}
+.holds{
+  color: #CCCCCC
+}
+.nuim-form__input {
+  min-height: 26px;
+  font-size:14px;
+}
+
+.tips{
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #9B9B9B;
+}
+.btn{
+  margin: 30px auto 0;
+  width: 95%;
+  background: #4A90E2;
+  color:#fff;
+}

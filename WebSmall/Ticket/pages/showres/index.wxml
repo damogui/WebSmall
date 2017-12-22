@@ -1,0 +1,25 @@
+<view class="show">
+  <view class="tops">单位发票抬头</view>
+  <view class="Taxinfo">
+    <view class="nuim-cell nuim-form__item">
+      <text class="nuim-form__title">名  称</text>
+      <text class="dist">{{name}}</text>  
+    </view>
+    <view class="nuim-cell nuim-form__item">
+      <text class="nuim-form__title">纳税人识别号</text>
+      <text class="dist">{{code}}</text>  
+    </view>
+    <view class="nuim-cell nuim-form__item">
+      <text class="nuim-form__title">地址、电话</text>
+      <text class="dist">{{addrtel}}</text>  
+    </view>
+    <view class="nuim-cell nuim-form__item">
+      <text class="nuim-form__title">开户行及账号</text>
+      <text class="dist">{{bankinfo}}</text>  
+    </view>
+  </view>
+  <view class="qrcode">
+    <image src="{{qrcodeimg}}" id='qrcodeimg' style="width: 500rpx;height: 500rpx;" ></image>
+    <!--bindtap="previewImg"  -->
+  </view>
+</view>

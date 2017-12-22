@@ -1,0 +1,36 @@
+<!--list.wxml-->
+<view class="list" >
+
+  <view class="zhanwei" wx:if="{{condition}}">
+      <view class="nodata">
+        <image class="zhanwei-img" src="/resources/zhanweis@2x.png"></image>
+        <view class="tips">
+          <text class="tips-p">为了方便快捷的开发票，亲先添加开票码</text>
+        </view> 
+      </view>
+      
+  </view>
+  <view class="hasdata" wx:else>
+    <view wx:for="{{data}}" wx:key='index' class="hasList" >
+      <view class="header"></view>
+      <view class="title" data-id='{{item[0].id}}' bindtap="toqrcode">
+        <text >{{item[0].name}}</text>
+        <image src="/resources/arrow.png" style='width:20px;height:20px;'></image>
+      </view>
+      <view class="tools">
+        <view class="del" data-id='{{item[0].id}}' bindtap="delete">
+          <image src="/resources/del.png" style='width:15px;height:15px;'></image>删除
+        </view>  
+        <view class="edit" data-eid='{{item[0].id}}' bindtap="edit">
+          <image src="/resources/edit.png" style='width:15px;height:15px;'></image>编辑
+        </view> 
+      </view>
+    </view>
+  </view>
+  <view class="addbtn" >
+    <navigator class="toadd" url="/pages/addnew/addnew">
+      <image class="add-img" src="/resources/tianjia.png"></image>
+      添加抬头
+    </navigator>
+  </view>
+</view>

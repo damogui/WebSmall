@@ -1,0 +1,58 @@
+/**addnew.wxss**/
+page{
+  height: 100%;
+  background: #f6f6f6;
+    width: 100%;
+}
+.nuim-form{
+  padding-top:10px; 
+  position: relative
+}
+.nuim-cell{
+  background: #fff;
+  padding: 10px 15px;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.nuim-form__item {
+  line-height: 26px;
+}
+.nuim-cell.nuim-form__item__link{
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABUElEQVRYR73XPU7DMBTA8fe8JUu7sDOxwgWQPDq+RW9QTgDiAogb5AZ0spdI9cDCBEeBKVKE9JClIqGK2n7+aMfGzv+npLEbhMBHKSWFEC9ENFpr70Jjc49haOIwDFtEfDqMGY0xm9zQqXlBgJRy3fe9A4DrVoggwEdbI6KA1ogkQEtEMqAVggVogWAD/kMQ0bO1dpvziGYBTlyJjTFm5CKyAbUQRYAaiGJAKaIK4BhBRP6re2vtY+w3UQ3wi+i67g0ArhARlmW5nabpNYSoCtBa3xCRQ8QVEX3P83zhnPs8C8DHAWAPAGsi+kJEaYz5OMstyI17XPEtKIkXA0rjRYAa8WxArXgWoGacDagdZwFaxJMBreJJgJbxKEApdSmEeOcur7Hl9+/x4EqotX7w2ypnbefEo1fg8Fbk/2zuUjYWbjwKyDkhd07xZsQNHo//AV354CEUiZ/xAAAAAElFTkSuQmCC) no-repeat;
+    background-position:right center;
+    background-color:#fff;
+    background-size:16px 16px
+}
+.nuim-form__title {
+  float: left;
+  width: 100px;
+  font-size: 14px;
+}
+.holds{
+  color: #CCCCCC
+}
+.nuim-form__input {
+  min-height: 26px;
+  font-size:14px;
+}
+
+.tips{
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #9B9B9B;
+}
+.btn{
+  margin: 30px auto 0;
+  width: 95%;
+  background: #4A90E2;
+  color:#fff;
+}
+.nuim-form__action__placeholder{
+    color:#ccc;
+    font-size:14px;
+}
+.nuim-form__action__value{
+    font-size:14px;
+}
+.hideinput{
+    display:none
+}

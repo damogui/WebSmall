@@ -1,0 +1,85 @@
+/**list.wxss**/
+page{
+  height: 100%;
+  background: #f6f6f6;
+    width: 100%;
+}
+.header{
+  height: 10px;
+  background:#f6f6f6;
+}
+.zhanwei{
+  padding-top:5rem;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.zhanwei-img{
+  width: 160px;
+  height: 140px;
+}
+.tips{
+  padding-top:10px;
+}
+.tips-p{
+  font-size: 13px;
+  color: #9b9b9b;
+}
+.addbtn{
+  margin: 10px auto 20px;
+  width: 80%;
+  text-align: center;
+}
+.toadd{
+  font-size: 1rem;
+  color: #4a90e2;
+  background: #fff;
+  border: 1px solid #4a90e2;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  line-height: 2.2;
+  box-sizing: border-box;
+}
+.add-img{
+  width: 16px;
+  height: 17px;
+  vertical-align: middle;
+}
+.hasList{
+  background: #fff;
+}
+.title{
+  font-size: 16px;
+  padding: 12px 15px;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #4a4a4a;
+  display: flex;
+}
+.title text{
+  width: 750rpx;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.tools {
+  height: 40px;
+}
+.tools view{
+  display: inline-block;
+  margin-right:20px;
+  line-height: 40px;
+  float: right; 
+  font-size: 14px;
+  
+}
+.tools view image{
+  vertical-align: middle;
+  padding-right:5px; 
+}
+.hasdata{
+ margin-bottom:20px;
+}
