@@ -6,7 +6,16 @@
     <view class="nuim-form">
       <view class="nuim-cell nuim-form__item">
         <text class="nuim-form__title">名  称</text>
-        <input class="nuim-form__input nuim-cell__bd" placeholder="必填"  name='name' value='{{name}}' placeholder-class="holds" maxlength='100'/>
+        <input bindinput="bindKeyInput"  class="nuim-form__input nuim-cell__bd" placeholder="必填"  name='name' value='{{name}}' placeholder-class="holds" maxlength='100'/>
+      </view>
+      <view class="sug_info" >
+        <!-- <text>{{sugData}}</text> -->
+       
+          <!-- {{index+1}}、{{item.title}} -->
+       <view wx:for="{{sugData}}"  wx:for-index="index" wx:for-item="item">
+          <text bindtap="bindItemClick"  class="menu_name"  data-id="{{index}}" data-cid="{{item.id}}" >{{item.name}}\n</text>
+        </view>
+         
       </view>
       <view class="nuim-cell nuim-form__item">
         <text class="nuim-form__title">纳税人识别号</text>

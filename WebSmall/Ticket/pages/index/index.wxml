@@ -1,9 +1,9 @@
 <import src="/components/toast/index.wxml" />
 <!--index.wxml-->
 <view class="container">
-  <view class="setinfo">
+  <!-- <view class="setinfo">
       <image class="userinfo-avatar" src="/resources/set.png" background-size="cover"  bindtap="toSet"></image>
-  </view>
+  </view> -->
   <view class="userinfo">
     <view class="scan" bindtap="scan">
       <image class="userinfo-avatar" src="/resources/sao.png" background-size="cover"></image>
@@ -22,7 +22,7 @@
   </view>
   <view class="copyright">
       <image class="copyright-avatar" src="/resources/taxlogo.png" background-size="cover"></image>
-       国家税务总局监制
+       www.our666.com
   </view>
 </view>
 <template is="toast" data="{{ Toast }}"></template>

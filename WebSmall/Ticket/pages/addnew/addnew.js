@@ -1,13 +1,135 @@
 var appInstance = getApp()
 var NUIM = require('../../components/index');
+var API_URL = "https://api.yonyoucloud.com/apis/yonyoucloudresearch/enterpriseSearch/queryAutoComplete";
+var API_URL2 = "https://api.yonyoucloud.com/apis/yonyoucloudresearch/enterpriseSearch/queryDetail";
+
 Page(Object.assign({},NUIM.Toast,{
   data: {
     id:'',
     name:'',
     code: '',
     addrtel: '',
-    bankinfo: ''
-  },
+    bankinfo: '',
+    sugData: ''
+  }, 
+  bindKeyInput: function(e) {
+   
+    var that = this;
+    var keyStr=e.detail.value;
+    
+    if (e.detail.value === '') {
+        that.setData({
+            sugData: ''
+        });
+        return;
+    }
+    if(/^[\u4e00-\u9fa5]+$/i.test(keyStr)){
+  
+    }else{
+      return;
+    }
+    if(keyStr.length<3){
+
+      return;
+    }
+   
+    var resultData=[];
+   //请求服务器
+   wx.request ( {
+    url: API_URL,
+    data: {
+      
+       keyword: keyStr,
+       size: 6
+       
+    },
+    method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+    header: {
+        'content-type': 'application/json',
+        'apicode': 'b4e0bdd7324a402b90c8276651eb7bf8'
+    }, // 设置请求的 header
+    success: function(res) {
+      
+      for(var i = 0; i < res.data.details.length; i++) {
+        
+        resultData.push({name:res.data.details[i].corpname,id:res.data.details[i].companyid});
+          
+       }
+    
+       that.setData({
+        sugData: resultData
+    });
+      
+     
+        wx.hideToast();
+       
+
+    },
+    fail: function() {
+
+        console.log("失败");
+        // fail
+        // wx.hideToast();
+    },
+    complete: function() {
+        // complete
+    }
+})
+    
+  
+  
+ 
+},
+// 列表选项点击提交
+bindItemClick: function(e) {
+  var idnexC=e.currentTarget.dataset.id;
+  var idnexId=e.currentTarget.dataset.cid;
+  var that=this;
+  
+  var resultData2=[];
+  //请求服务器
+  wx.request ( {
+   url: API_URL2,
+   data: {
+      id: idnexId
+   },
+   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+   header: {
+       'content-type': 'application/json',
+       'apicode': 'b4e0bdd7324a402b90c8276651eb7bf8'
+   }, // 设置请求的 header
+   success: function(res) {
+ 
+    resultData2=res.data.details[0];
+    
+    that.setData({
+      name:resultData2.corpname,
+      code:resultData2.taxNumber,
+      addrtel:resultData2.address+"-"+resultData2.phone,
+      bankinfo:resultData2.gongsh,
+      sugData: ''
+  });
+     
+    
+       wx.hideToast();
+      
+
+   },
+   fail: function() {
+
+       console.log("失败");
+       // fail
+       // wx.hideToast();
+   },
+   complete: function() {
+       // complete
+   }
+})
+  
+
+  
+
+},
   onLoad: function (option) {
     // console.log(option.id)
     wx.showShareMenu({
@@ -103,19 +225,7 @@ Page(Object.assign({},NUIM.Toast,{
       wx.navigateTo({
         url: '/pages/showres/index?id=' + qrcode //实际路径要写全
       })
-    //获取前一个页面设置data
-  //   var pages = getCurrentPages();
-  //   var currPage = pages[pages.length - 1];  //当前页面
-  //   var prevPage = pages[pages.length - 2];
-  //   wx.getStorage({
-  //     key: 'appdata',
-  //     success: function(res) {
-  //       //console.log(res.data)
-  //       prevPage.setData({
-  //         data:res.data
-  //       })
-  //     } 
-  //   })
+ 
 
   }
 }));

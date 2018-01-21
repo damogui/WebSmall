@@ -41,3 +41,18 @@ page{
   background: #4A90E2;
   color:#fff;
 }
+/* 提示div */
+.sug_info {
+  margin: 15px 10px;
+  z-index:10;
+  text-align: center;
+}
+
+.menu_name{
+  font-family: '幼圆';
+  font-size: large;
+  position: relative;
+  top: 5px;
+  color: #A9A9A9;
+  text-align: center;
+  }
