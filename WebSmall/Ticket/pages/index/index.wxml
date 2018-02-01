@@ -21,7 +21,7 @@
     </view>
   </view>
   <view class="copyright">
-      <image class="copyright-avatar" src="/resources/taxlogo.png" background-size="cover"></image>
+      <!-- <image class="copyright-avatar" src="/resources/taxlogo.png" background-size="cover"></image> -->
        www.our666.com
   </view>
 </view>
